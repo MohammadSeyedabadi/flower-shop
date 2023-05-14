@@ -1,0 +1,219 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app--container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.letter-spacing {
+  letter-spacing: 1.5px;
+}
+/* ***************************************** Navbar styles start ***************************************** */
+/* .light-text-color{
+  color: #d23669;;
+} */
+
+.dark {
+  background-color: #21222a !important;
+  color: #ffa7c4 !important;
+}
+.light {
+  background-color: #eee;
+}
+.dark--text-color {
+  color: #fff !important;
+}
+.light--text-color {
+  color: #d23669 !important;
+}
+
+.card--stats-dark {
+  background-color: #0d0e11;
+}
+/* .dark-text{
+    color: #ffa7c4 !important;
+  } */
+.hoverDark:is(:focus, :hover) {
+  background-color: #121318 !important;
+}
+
+/* ***************** nav-logo start ***************** */
+/* .nav--logo_icon {
+    width: 30px;
+    margin-right: 10px;
+  } */
+
+/* .nav--logo_text {
+    color: #61DAFB;
+    margin-right: auto;
+  } */
+
+/* .nav--title {
+    color: #DEEBF8;
+  } */
+/* ***************** nav-logo end ***************** */
+
+#navbar {
+  z-index: 99;
+  position: fixed;
+  height: 54px;
+  /* background-color: #d23669; */
+  background-color: #d2366afa;
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+.navbar-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.navbar-item {
+  margin: 0.4em;
+  width: 100%;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ******** Global Classes ******** */
+.letter-spacing {
+  letter-spacing: 2px;
+}
+/* ******** Global Classes ******** */
+
+.home-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  /* white-space: nowrap; */
+  margin-right: auto;
+  color: #f5f4f4;
+}
+
+.home-link:is(:focus, :hover) {
+  color: #ffffff;
+}
+
+/* ***************** darkmode toggler start ***************** */
+
+.toggler--icon {
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* ***************** darkmode toggler end ***************** */
+.navbar-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4em 0.8em;
+  width: 100%;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-right: auto;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.navbar-link:is(:focus, :hover) {
+  color: #ffffff;
+  background-color: #a32a52;
+}
+
+#navbar-toggle {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.icon-bar {
+  display: block;
+  width: 25px;
+  height: 4px;
+  margin: 2px;
+  background-color: #f5f4f4;
+}
+
+#navbar-toggle:is(:focus, :hover) .icon-bar {
+  background-color: #ffffff;
+}
+#navbar-toggle[aria-expanded='true'] .icon-bar:is(:first-child, :last-child) {
+  position: absolute;
+  margin: 0;
+  width: 30px;
+}
+#navbar-toggle[aria-expanded='true'] .icon-bar:first-child {
+  transform: rotate(45deg);
+}
+#navbar-toggle[aria-expanded='true'] .icon-bar:nth-child(2) {
+  opacity: 0;
+}
+#navbar-toggle[aria-expanded='true'] .icon-bar:last-child {
+  transform: rotate(-45deg);
+}
+
+#navbar-menu {
+  position: fixed;
+  top: 54px;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  left: 0;
+  right: 0;
+}
+
+#navbar-toggle[aria-expanded='true'] + #navbar-menu {
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  visibility: visible;
+}
+.navbar-links {
+  list-style: none;
+  position: absolute;
+  background-color: #d23669;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0;
+  right: 0;
+  margin: 1.4rem;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+#navbar-toggle[aria-expanded='true'] + #navbar-menu .navbar-links-dark {
+  padding: 1em;
+}
+
+#navbar-toggle[aria-expanded='true'] + #navbar-menu .navbar-links {
+  padding: 1em;
+}
+
+/* ****************************** Navbar styles end ****************************** */
+
+.footer {
+  margin-top: auto;
+}
