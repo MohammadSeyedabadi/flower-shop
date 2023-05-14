@@ -67,9 +67,8 @@ img {
     color: #DEEBF8;
   } */
 /* ***************** nav-logo end ***************** */
-
 #navbar {
-  z-index: 99;
+  z-index: 5;
   position: fixed;
   height: 54px;
   /* background-color: #d23669; */
@@ -213,6 +212,17 @@ img {
 }
 
 /* ****************************** Navbar styles end ****************************** */
+
+
+/* ****************************** Main styles start **************************** */
+.main{
+  margin-top: 5rem;
+}
+
+
+
+
+/* ****************************** Main styles end ****************************** */
 
 .footer {
   margin-top: auto;
