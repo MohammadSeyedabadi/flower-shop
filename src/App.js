@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Mainpage from './pages/Main page/Mainpage'
-import Fqa from "./pages/Fqa/Fqa"
+import Products from "./pages/Products/Products"
 import Footer from './components/Footer'
 
 export default function App() {
@@ -30,7 +30,7 @@ export default function App() {
         {/* <Route path="/my-website" element={<Mainpage darkMode={darkMode} />} /> */}
         <Routes>
           <Route path="/" element={<Mainpage darkMode={darkMode} />} />
-          <Route path="/fqa" element={<Fqa darkMode={darkMode} />} />
+          <Route path="/products" element={<Products darkMode={darkMode} />} />
         </Routes>
         
             {/* <Route path="/blog" element={<Blog darkMode={darkMode} />} />

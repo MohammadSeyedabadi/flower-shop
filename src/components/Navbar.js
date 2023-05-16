@@ -72,9 +72,9 @@ export default function Navbar(props) {
                     ? 'dark hoverDark navbar-link fs-3'
                     : 'navbar-link fs-3'
                 }
-                to="/fqa"
+                to="/Products"
               >
-                About
+                Products
               </CustomLink>
             </li>
             <li className="navbar-item">

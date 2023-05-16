@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Fqa(){
+export default function Products(){
     return(
         <main className="main">
-            <h1>FQA</h1>
+            <h1>Products</h1>
         </main>
     )
 }
