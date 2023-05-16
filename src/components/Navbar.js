@@ -43,7 +43,8 @@ export default function Navbar(props) {
           Special offers
         </Link>
 
-        {(location.pathname === '/products' || location.pathname === '/cart') && (
+        {(location.pathname === '/products' ||
+          location.pathname === '/cart') && (
           <Link to="/cart">
             <i
               className={
@@ -80,49 +81,43 @@ export default function Navbar(props) {
         </button>
         <div id="navbar-menu" aria-labelledby="navbar-toggle">
           <ul className={props.darkMode ? 'dark navbar-links' : 'navbar-links'}>
-            <li className="navbar-item">
-              <CustomLink
-                className={
-                  props.darkMode
-                    ? 'dark hoverDark navbar-link fs-3'
-                    : 'navbar-link fs-3'
-                }
-                to="/products"
-              >
-                Products
-              </CustomLink>
-            </li>
-            <li className="navbar-item">
-              <CustomLink
-                className={
-                  props.darkMode
-                    ? 'dark hoverDark navbar-link fs-3'
-                    : 'navbar-link fs-3'
-                }
-                to="/"
-              >
-                Contact
-              </CustomLink>
-            </li>
-            <li className="navbar-item">
-              <CustomLink
-                className={
-                  props.darkMode
-                    ? 'dark hoverDark navbar-link fs-3'
-                    : 'navbar-link fs-3'
-                }
-                to="/"
-              >
-                FAQ
-              </CustomLink>
-            </li>
+            <Link
+              className={
+                props.darkMode
+                  ? 'navbar-item dark hoverDark navbar-link fs-3'
+                  : 'navbar-item navbar-link fs-3'
+              }
+              to="/products"
+            >
+              Products
+            </Link>
+            <Link
+              className={
+                props.darkMode
+                  ? 'navbar-item dark hoverDark navbar-link fs-3'
+                  : 'navbar-item navbar-link fs-3'
+              }
+              to="/"
+            >
+              Contact
+            </Link>
+            <Link
+              className={
+                props.darkMode
+                  ? 'navbar-item dark hoverDark navbar-link fs-3'
+                  : 'navbar-item navbar-link fs-3'
+              }
+              to="/"
+            >
+              FAQ
+            </Link>
           </ul>
         </div>
       </nav>
     </header>
   )
 
-  function CustomLink({ to, children, ...props }) {
+  function Link({ to, children, ...props }) {
     const resolvedPath = useResolvedPath(to)
     const isActive = useMatch({ path: resolvedPath.pathname, end: true })
 
