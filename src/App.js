@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Navbar from './components/Navbar'
-import Mainpage from './pages/Mainpage'
+import Mainpage from './pages/Main page/Mainpage'
 import Footer from './components/Footer'
 
 export default function App() {

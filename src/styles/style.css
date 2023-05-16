@@ -213,17 +213,41 @@ img {
 
 /* ****************************** Navbar styles end ****************************** */
 
-
 /* ****************************** Main styles start **************************** */
-.main{
-  margin-top: 5rem;
+.main {
+  padding-top: 108px;
 }
 
+.eachcard {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.card--image {
+  width: 700px; /*to fix image and its title*/
+}
+.card--stats-light {
+  background-color: #e9c1c1;
+}
+.card--stats-light-1 {
+  background-color: #e9e8c1;
+}
 
+.card--stats-light-2 {
+  background-color: #c2c1e9;
+}
 
+.card--badge {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  background-color: white;
+}
 
 /* ****************************** Main styles end ****************************** */
 
 .footer {
   margin-top: auto;
+  padding-top: 108px;
 }
