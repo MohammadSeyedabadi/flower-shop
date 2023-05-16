@@ -1,7 +1,6 @@
 import React from 'react'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import { Link, useMatch, useResolvedPath } from 'react-router-dom'
-import { useLocation } from 'react-router-dom'
+import { Link, useMatch, useResolvedPath,useLocation } from 'react-router-dom'
 
 export default function Navbar(props) {
   React.useEffect(() => {
@@ -81,7 +80,7 @@ export default function Navbar(props) {
         </button>
         <div id="navbar-menu" aria-labelledby="navbar-toggle">
           <ul className={props.darkMode ? 'dark navbar-links' : 'navbar-links'}>
-            <Link
+            <CustomLink
               className={
                 props.darkMode
                   ? 'navbar-item dark hoverDark navbar-link fs-3'
@@ -90,8 +89,8 @@ export default function Navbar(props) {
               to="/products"
             >
               Products
-            </Link>
-            <Link
+            </CustomLink>
+            <CustomLink
               className={
                 props.darkMode
                   ? 'navbar-item dark hoverDark navbar-link fs-3'
@@ -100,8 +99,8 @@ export default function Navbar(props) {
               to="/"
             >
               Contact
-            </Link>
-            <Link
+            </CustomLink>
+            <CustomLink
               className={
                 props.darkMode
                   ? 'navbar-item dark hoverDark navbar-link fs-3'
@@ -110,14 +109,14 @@ export default function Navbar(props) {
               to="/"
             >
               FAQ
-            </Link>
+            </CustomLink>
           </ul>
         </div>
       </nav>
     </header>
   )
 
-  function Link({ to, children, ...props }) {
+  function CustomLink({ to, children, ...props }) {
     const resolvedPath = useResolvedPath(to)
     const isActive = useMatch({ path: resolvedPath.pathname, end: true })
 
