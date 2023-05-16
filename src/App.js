@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Mainpage from './pages/Main page/Mainpage'
 import Products from "./pages/Products/Products"
+import Cart from "./pages/Cart/Cart"
 import Footer from './components/Footer'
 import { ShopContextProvider } from "./context/shop-context";
 
@@ -33,12 +34,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Mainpage darkMode={darkMode} />} />
           <Route path="/products" element={<Products darkMode={darkMode} />} />
+          <Route path="/cart" element={<Cart darkMode={darkMode} />} />
         </Routes>
-        
-            {/* <Route path="/blog" element={<Blog darkMode={darkMode} />} />
-            <Route path="/contact" element={<Contact darkMode={darkMode} />} />
-            <Route path="/projects" element={<Projects darkMode={darkMode} />} /> */}
-        {/* </Routes> */}
         </ShopContextProvider>
         <Footer darkMode={darkMode} />
       </Container>
