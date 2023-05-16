@@ -1,6 +1,7 @@
 import React from 'react'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 export default function Navbar(props) {
   React.useEffect(() => {
@@ -21,6 +22,8 @@ export default function Navbar(props) {
     navbarMenu.addEventListener('click', toggleNavbarVisibility)
   }, [])
 
+  const location = useLocation()
+
   return (
     <header id="navbar">
       <nav
@@ -37,15 +40,27 @@ export default function Navbar(props) {
           }
         >
           {/* <div className="navbar-logo"></div> */}
-          Special prices for orders over $150
+          Special offers
         </Link>
 
-        <div className="toggler">
+        {(location.pathname === '/products' || location.pathname === '/cart') && (
+          <Link to="/cart">
+            <i
+              className={
+                props.darkMode
+                  ? 'bi bi-cart3 me-1 me-lg-3 fs-4 navbar--icon'
+                  : 'bi bi-cart3 me-1 me-lg-3 fs-4 navbar--icon'
+              }
+            ></i>
+          </Link>
+        )}
+
+        <div>
           <i
             className={
               props.darkMode
-                ? 'bi bi-sun me-1 me-lg-3 fs-4 toggler--icon'
-                : 'bi bi-moon me-1 me-lg-3 fs-4 toggler--icon'
+                ? 'bi bi-sun me-1 me-lg-3 fs-4 navbar--icon'
+                : 'bi bi-moon me-1 me-lg-3 fs-4 navbar--icon'
             }
             onClick={props.toggleDarkMode}
           ></i>
@@ -72,7 +87,7 @@ export default function Navbar(props) {
                     ? 'dark hoverDark navbar-link fs-3'
                     : 'navbar-link fs-3'
                 }
-                to="/Products"
+                to="/products"
               >
                 Products
               </CustomLink>
@@ -110,7 +125,7 @@ export default function Navbar(props) {
   function CustomLink({ to, children, ...props }) {
     const resolvedPath = useResolvedPath(to)
     const isActive = useMatch({ path: resolvedPath.pathname, end: true })
-  
+
     return (
       <li className={isActive ? 'active--link' : ''}>
         <Link to={to} {...props}>

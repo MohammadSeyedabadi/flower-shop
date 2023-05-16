@@ -111,14 +111,14 @@ img {
   color: #ffffff;
 }
 
-/* ***************** darkmode toggler start ***************** */
+/* ***************** navbar icon start ***************** */
 
-.toggler--icon {
+.navbar--icon {
   color: #ffffff;
   cursor: pointer;
 }
 
-/* ***************** darkmode toggler end ***************** */
+/* ***************** navbar icon end ***************** */
 .navbar-link {
   display: flex;
   justify-content: center;
