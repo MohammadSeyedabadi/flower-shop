@@ -121,7 +121,7 @@ export default function Navbar(props) {
     const isActive = useMatch({ path: resolvedPath.pathname, end: true })
 
     return (
-      <li className={isActive ? 'active--link' : ''}>
+      <li className={isActive ? 'active--link w-100' : 'w-100'}>
         <Link to={to} {...props}>
           {children}
         </Link>
