@@ -5,8 +5,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import Picture from '../../images/p11.jpg'
 
 export default function Mainpage(props) {
-  const cards = ProductsList.map((item) => {
-    return <Card key={item.id} item={item} darkMode={props.darkMode} />
+  const cards = ProductsList.slice(0, 8).map((item) => {
+    return <Card key={item.id} id={item.id} item={item} darkMode={props.darkMode} />
   })
   return (
     <main

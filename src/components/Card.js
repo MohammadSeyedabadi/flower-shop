@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { ShopContext } from '../context/shop-context'
 //import P2 from "../images/p2.jpg"
+
 export default function Card(props) {
   let badgeText
   if (props.item.openSpots === 0) {
@@ -9,24 +11,19 @@ export default function Card(props) {
     badgeText = 'Available'
   }
 
+  const id = props.id
+  const { addToCart, cartItems } = useContext(ShopContext)
+
+  const cartItemCount = cartItems[id]
+
   return (
     <div className="col-md-3 eachcard">
       {badgeText && (
         <div className="p-2 fw-semibold card--badge">{badgeText}</div>
       )}
       <Link to="/products">
-        <img
-          src={props.item.coverImg}
-          // src={P2}
-          className="img-fluid card--image"
-        />
+        <img src={props.item.coverImg} className="img-fluid card--image" />
       </Link>
-      {/* <div className="card--stats">
-          <i className="bi bi-star-fill card--star"></i>
-          <span>{props.item.stats.rating}</span>
-          <span className="gray">({props.item.stats.reviewCount}) • </span>
-          <span className="gray">{props.item.location}</span>
-        </div> */}
       <div
         className={
           props.darkMode
@@ -40,6 +37,9 @@ export default function Card(props) {
         <p className="mb-2 fs-6 fw-semibold letter-spacing card--price">
           ${props.item.price}
         </p>
+        <button className="addToCartBttn" onClick={() => addToCart(id)}>
+          Add To Cart {cartItemCount > 0 && <> ({cartItemCount})</>}
+        </button>
       </div>
     </div>
   )
