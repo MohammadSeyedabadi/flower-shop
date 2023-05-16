@@ -1,5 +1,6 @@
 import React from 'react'
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 
 export default function Navbar(props) {
   React.useEffect(() => {
@@ -27,8 +28,8 @@ export default function Navbar(props) {
           props.darkMode ? 'dark navbar-container' : 'navbar-container'
         }
       >
-        <a
-          href="#"
+        <Link
+          to="/"
           className={
             props.darkMode
               ? 'ms-1 ms-lg-3 fs-6 fst-italic fw-semibold dark home-link letter-spacing'
@@ -37,7 +38,7 @@ export default function Navbar(props) {
         >
           {/* <div className="navbar-logo"></div> */}
           Special prices for orders over $150
-        </a>
+        </Link>
 
         <div className="toggler">
           <i
@@ -65,44 +66,57 @@ export default function Navbar(props) {
         <div id="navbar-menu" aria-labelledby="navbar-toggle">
           <ul className={props.darkMode ? 'dark navbar-links' : 'navbar-links'}>
             <li className="navbar-item">
-              <a
+              <CustomLink
                 className={
                   props.darkMode
                     ? 'dark hoverDark navbar-link fs-3'
                     : 'navbar-link fs-3'
                 }
-                href="#"
+                to="/fqa"
               >
                 About
-              </a>
+              </CustomLink>
             </li>
             <li className="navbar-item">
-              <a
+              <CustomLink
                 className={
                   props.darkMode
                     ? 'dark hoverDark navbar-link fs-3'
                     : 'navbar-link fs-3'
                 }
-                href="#"
+                to="/"
               >
                 Contact
-              </a>
+              </CustomLink>
             </li>
             <li className="navbar-item">
-              <a
+              <CustomLink
                 className={
                   props.darkMode
                     ? 'dark hoverDark navbar-link fs-3'
                     : 'navbar-link fs-3'
                 }
-                href="#"
+                to="/"
               >
                 FAQ
-              </a>
+              </CustomLink>
             </li>
           </ul>
         </div>
       </nav>
     </header>
   )
+
+  function CustomLink({ to, children, ...props }) {
+    const resolvedPath = useResolvedPath(to)
+    const isActive = useMatch({ path: resolvedPath.pathname, end: true })
+  
+    return (
+      <li className={isActive ? 'active--link' : ''}>
+        <Link to={to} {...props}>
+          {children}
+        </Link>
+      </li>
+    )
+  }
 }

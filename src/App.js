@@ -1,7 +1,9 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container'
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Mainpage from './pages/Main page/Mainpage'
+import Fqa from "./pages/Fqa/Fqa"
 import Footer from './components/Footer'
 
 export default function App() {
@@ -26,9 +28,12 @@ export default function App() {
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         {/* <Routes> */}
         {/* <Route path="/my-website" element={<Mainpage darkMode={darkMode} />} /> */}
-        <Mainpage darkMode={darkMode} />
-        {/* <Route path="/about" element={<About darkMode={darkMode} />} />
-            <Route path="/blog" element={<Blog darkMode={darkMode} />} />
+        <Routes>
+          <Route path="/" element={<Mainpage darkMode={darkMode} />} />
+          <Route path="/fqa" element={<Fqa darkMode={darkMode} />} />
+        </Routes>
+        
+            {/* <Route path="/blog" element={<Blog darkMode={darkMode} />} />
             <Route path="/contact" element={<Contact darkMode={darkMode} />} />
             <Route path="/projects" element={<Projects darkMode={darkMode} />} /> */}
         {/* </Routes> */}
