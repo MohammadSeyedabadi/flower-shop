@@ -1,11 +1,11 @@
 import React from 'react'
 import Card from '../../components/Card'
-import productsList from '../../data/productsList'
+import ProductsList from '../../data/ProductsList'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import Picture from '../../images/p11.jpg'
 
 export default function Mainpage(props) {
-  const cards = productsList.map((item) => {
+  const cards = ProductsList.map((item) => {
     return <Card key={item.id} item={item} darkMode={props.darkMode} />
   })
   return (

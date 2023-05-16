@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 //import P2 from "../images/p2.jpg"
 export default function Card(props) {
   let badgeText
@@ -13,13 +14,13 @@ export default function Card(props) {
       {badgeText && (
         <div className="p-2 fw-semibold card--badge">{badgeText}</div>
       )}
-      <a href="#">
+      <Link to="/products">
         <img
           src={props.item.coverImg}
           // src={P2}
           className="img-fluid card--image"
         />
-      </a>
+      </Link>
       {/* <div className="card--stats">
           <i className="bi bi-star-fill card--star"></i>
           <span>{props.item.stats.rating}</span>

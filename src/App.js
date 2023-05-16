@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Mainpage from './pages/Main page/Mainpage'
 import Products from "./pages/Products/Products"
 import Footer from './components/Footer'
+import { ShopContextProvider } from "./context/shop-context";
 
 export default function App() {
   const [darkMode, setDarkMode] = React.useState(false)
@@ -25,6 +26,7 @@ export default function App() {
   return (
     <div className={darkMode ? 'dark' : 'light'}>
       <Container fluid className="app--container">
+        <ShopContextProvider>
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         {/* <Routes> */}
         {/* <Route path="/my-website" element={<Mainpage darkMode={darkMode} />} /> */}
@@ -37,6 +39,7 @@ export default function App() {
             <Route path="/contact" element={<Contact darkMode={darkMode} />} />
             <Route path="/projects" element={<Projects darkMode={darkMode} />} /> */}
         {/* </Routes> */}
+        </ShopContextProvider>
         <Footer darkMode={darkMode} />
       </Container>
     </div>
