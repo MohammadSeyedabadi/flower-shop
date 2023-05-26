@@ -2,6 +2,7 @@ import React from 'react'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import { Link, useMatch, useResolvedPath,useLocation } from 'react-router-dom'
 
+
 export default function Navbar(props) {
   React.useEffect(() => {
     //const element = document.getElementById('navbar');
@@ -83,8 +84,8 @@ export default function Navbar(props) {
             <CustomLink
               className={
                 props.darkMode
-                  ? 'navbar-item dark hoverDark navbar-link fs-3'
-                  : 'navbar-item navbar-link fs-3'
+                  ? 'dark hoverDark navbar-link fs-3'
+                  : 'navbar-link fs-3'
               }
               to="/products"
             >
@@ -93,8 +94,8 @@ export default function Navbar(props) {
             <CustomLink
               className={
                 props.darkMode
-                  ? 'navbar-item dark hoverDark navbar-link fs-3'
-                  : 'navbar-item navbar-link fs-3'
+                  ? 'dark hoverDark navbar-link fs-3'
+                  : 'navbar-link fs-3'
               }
               to="/"
             >
@@ -103,8 +104,8 @@ export default function Navbar(props) {
             <CustomLink
               className={
                 props.darkMode
-                  ? 'navbar-item dark hoverDark navbar-link fs-3'
-                  : 'navbar-item navbar-link fs-3'
+                  ? 'dark hoverDark navbar-link fs-3'
+                  : 'navbar-link fs-3'
               }
               to="/"
             >
@@ -121,7 +122,7 @@ export default function Navbar(props) {
     const isActive = useMatch({ path: resolvedPath.pathname, end: true })
 
     return (
-      <li className={isActive ? 'active--link w-100' : 'w-100'}>
+      <li className={isActive ? 'navbar-item active--link' : 'navbar-item'}>
         <Link to={to} {...props}>
           {children}
         </Link>

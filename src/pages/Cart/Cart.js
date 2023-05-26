@@ -27,8 +27,7 @@ export default function Cart() {
           <div className="checkout">
             <p> Subtotal: ${totalAmount} </p>
             <button onClick={() => navigate('/products')}>
-              {' '}
-              Continue Shopping{' '}
+              Continue Shopping
             </button>
             {/* <button
             onClick={() => {

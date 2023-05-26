@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { ShopContext } from '../context/shop-context'
 //import P2 from "../images/p2.jpg"
 
@@ -15,6 +15,8 @@ export default function Card(props) {
   const { addToCart, cartItems } = useContext(ShopContext)
 
   const cartItemCount = cartItems[id]
+
+  const location = useLocation()
 
   return (
     <div className="col-md-3 eachcard">
@@ -37,9 +39,11 @@ export default function Card(props) {
         <p className="mb-2 fs-6 fw-semibold letter-spacing card--price">
           ${props.item.price}
         </p>
-        <button className="addToCartBttn" onClick={() => addToCart(id)}>
-          Add To Cart {cartItemCount > 0 && <> ({cartItemCount})</>}
-        </button>
+        {location.pathname === '/products' && (
+          <button className="addToCartBttn" onClick={() => addToCart(id)}>
+            Add To Cart {cartItemCount > 0 && <> ({cartItemCount})</>}
+          </button>
+        )}
       </div>
     </div>
   )
