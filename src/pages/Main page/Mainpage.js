@@ -3,15 +3,19 @@ import Card from '../../components/Card'
 import ProductsList from '../../data/ProductsList'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import Picture from '../../images/p11.jpg'
-import P2 from "../../images/p2.jpg"
-import P3 from "../../images/p3.jpg"
-import P4 from "../../images/p4.jpg"
-import P5 from "../../images/p5.jpg"
-import P6 from "../../images/p6.jpg"
+import P2 from '../../images/p2.jpg'
+import P3 from '../../images/p3.jpg'
+import P4 from '../../images/p4.jpg'
+import P5 from '../../images/p5.jpg'
+import P6 from '../../images/p6.jpg'
+import P17 from '../../images/p17.jpg'
+import P18 from '../../images/p18.jpg'
 
 export default function Mainpage(props) {
   const cards = ProductsList.slice(0, 8).map((item) => {
-    return <Card key={item.id} id={item.id} item={item} darkMode={props.darkMode} />
+    return (
+      <Card key={item.id} id={item.id} item={item} darkMode={props.darkMode} />
+    )
   })
 
   const Thumbnail = ({ arr, image, index }) => {
@@ -22,7 +26,11 @@ export default function Mainpage(props) {
             key={i}
             src={imgsrc}
             onClick={() => image(i)}
-            className={index === i ? 'cursor-style thumbnail--img active' : 'thumbnail--img cursor-style'}
+            className={
+              index === i
+                ? 'cursor-style thumbnail--img active'
+                : 'thumbnail--img cursor-style'
+            }
           />
         ))}
       </div>
@@ -65,7 +73,6 @@ export default function Mainpage(props) {
       </div>
     )
   }
-
 
   return (
     <main
@@ -171,15 +178,7 @@ export default function Mainpage(props) {
 
       <div className="row pt-5 mb-5 d-flex align-items-center">
         <div className="col-md-6 slider--container">
-          <Slideshow
-            imgs={[
-              P2,
-              P3,
-              P4,
-              P5,
-              P6,
-            ]}
-          />
+          <Slideshow imgs={[P2, P3, P4, P5, P6]} />
         </div>
         <div className="col-md-6">
           <h1
@@ -198,6 +197,364 @@ export default function Mainpage(props) {
         </div>
       </div>
 
+      <div className="text-center pt-5 mb-5">
+        <h1
+          className={
+            props.darkMode
+              ? 'fs-6 dark--text-color fst-italic'
+              : 'fs-6 fst-italic'
+          }
+        >
+          Our services
+        </h1>
+        <h2
+          className={
+            props.darkMode
+              ? 'fs-1 letter-spacing'
+              : 'fs-1 light--text-color letter-spacing'
+          }
+        >
+          Flowers for every occasion
+        </h2>
+      </div>
+      <div className="row gy-2 mb-5 d-flex justyfy-content-center">
+        <div className="col-md-6 d-flex justify-content-center">
+          <img src={P17} className="img-fluid" alt="" />
+        </div>
+        <div className="col-md-6 d-flex justify-content-center">
+          <img src={P18} className="img-fluid" alt="" />
+        </div>
+      </div>
+      <div className="row gy-3 d-flex justify-content-center mb-5">
+        <div className="col-md-3 d-flex justify-content-sm-center align-items-center">
+          <span>
+            <i
+              className={
+                props.darkMode
+                  ? 'bi bi-hand-index-thumb fs-1 me-3'
+                  : 'bi bi-hand-index-thumb fs-1 light--text-color me-3'
+              }
+            ></i>
+          </span>
+          <span>
+            <h5
+              className={
+                props.darkMode
+                  ? 'letter-spacing mb-0'
+                  : 'light--text-color letter-spacing mb-0'
+              }
+            >
+              Online orders
+            </h5>
+            <h6>
+              <a
+                href="#"
+                className={
+                  props.darkMode
+                    ? 'text-white text-decoration-underline fst-italic'
+                    : 'text-dark text-decoration-underline fst-italic'
+                }
+              >
+                More info
+              </a>
+            </h6>
+          </span>
+        </div>
+        <div className="col-md-3 d-flex justify-content-sm-center align-items-center">
+          <span>
+            <i
+              className={
+                props.darkMode
+                  ? 'bi bi-truck fs-1 me-3'
+                  : 'bi bi-truck fs-1 light--text-color me-3'
+              }
+            ></i>
+          </span>
+          <span>
+            <h5
+              className={
+                props.darkMode
+                  ? 'letter-spacing mb-0'
+                  : 'light--text-color letter-spacing mb-0'
+              }
+            >
+              Delivery in 2-4 hours
+            </h5>
+            <h6>
+              <a
+                href="#"
+                className={
+                  props.darkMode
+                    ? 'text-white text-decoration-underline fst-italic'
+                    : 'text-dark text-decoration-underline fst-italic'
+                }
+              >
+                More info
+              </a>
+            </h6>
+          </span>
+        </div>
+        <div className="col-md-3 d-flex justify-content-sm-center align-items-center">
+          <span>
+            <i
+              className={
+                props.darkMode
+                  ? 'bi bi-droplet fs-1 me-3'
+                  : 'bi bi-droplet fs-1 light--text-color me-3'
+              }
+            ></i>
+          </span>
+          <span>
+            <h5
+              className={
+                props.darkMode
+                  ? 'letter-spacing mb-0'
+                  : 'light--text-color letter-spacing mb-0'
+              }
+            >
+              Freshness
+            </h5>
+            <h6>
+              <a
+                href="#"
+                className={
+                  props.darkMode
+                    ? 'text-white text-decoration-underline fst-italic'
+                    : 'text-dark text-decoration-underline fst-italic'
+                }
+              >
+                More info
+              </a>
+            </h6>
+          </span>
+        </div>
+        <div className="col-md-3 d-flex justify-content-sm-center align-items-center">
+          <span>
+            <i
+              className={
+                props.darkMode
+                  ? 'bi bi-palette fs-1 me-3'
+                  : 'bi bi-palette fs-1 light--text-color me-3'
+              }
+            ></i>
+          </span>
+          <span>
+            <h5
+              className={
+                props.darkMode
+                  ? 'letter-spacing mb-0'
+                  : 'light--text-color letter-spacing mb-0'
+              }
+            >
+              Made by artists
+            </h5>
+            <h6>
+              <a
+                href="#"
+                className={
+                  props.darkMode
+                    ? 'text-white text-decoration-underline fst-italic'
+                    : 'text-dark text-decoration-underline fst-italic'
+                }
+              >
+                More info
+              </a>
+            </h6>
+          </span>
+        </div>
+      </div>
+
+      <div
+        className={
+          props.darkMode
+            ? 'row m-5 p-5 card--stats-dark'
+            : 'row m-5 p-5 card--stats-light'
+        }
+      >
+        <p
+          className={
+            props.darkMode
+              ? 'text-center fs-4 dark--text-color'
+              : 'text-center fs-4'
+          }
+        >
+          Every flower is a soul blossoming in nature. A flower does not think
+          of competing with the flower next to it. It just blooms.
+        </p>
+        <p
+          className={
+            props.darkMode
+              ? 'text-center fs-6 fst-italic'
+              : 'text-center fs-6 fst-italic light--text-color'
+          }
+        >
+          Andrew Mott
+        </p>
+      </div>
+
+      <div className="text-center pt-5 mb-5">
+        <h1
+          className={
+            props.darkMode
+              ? 'fs-6 dark--text-color fst-italic'
+              : 'fs-6 fst-italic'
+          }
+        >
+          Contacts
+        </h1>
+        <h2
+          className={
+            props.darkMode
+              ? 'fs-1 letter-spacing'
+              : 'fs-1 light--text-color letter-spacing'
+          }
+        >
+          Where to find us
+        </h2>
+      </div>
+      <div className="row gy-2 justify-content-evenly">
+        <div
+          className={
+            props.darkMode
+              ? 'col-xl-3 p-5 card--stats-dark'
+              : 'col-xl-3 p-5 card--stats-light'
+          }
+        >
+          <h5
+            className={
+              props.darkMode
+                ? 'text-center letter-spacing'
+                : 'text-center letter-spacing light--text-color'
+            }
+          >
+            Toronto
+          </h5>
+          <h6 className={props.darkMode ? '' : 'light--text-color'}>
+            Say hello
+          </h6>
+          <h6
+            className={
+              props.darkMode
+                ? 'fst-italic mb-5 dark--text-color'
+                : 'fst-italic mb-5'
+            }
+          >
+            email@site.com
+          </h6>
+          <h6 className={props.darkMode ? '' : 'light--text-color'}>Phone</h6>
+          <h6
+            className={
+              props.darkMode
+                ? 'fst-italic mb-5 dark--text-color'
+                : 'fst-italic mb-5'
+            }
+          >
+            +369 35 353562 3544
+          </h6>
+          <h6 className={props.darkMode ? '' : 'light--text-color'}>Address</h6>
+          <h6
+            className={
+              props.darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
+            }
+          >
+            4th Avenue 4856, New York
+          </h6>
+        </div>
+        <div
+          className={
+            props.darkMode
+              ? 'col-xl-3 p-5 card--stats-dark'
+              : 'col-xl-3 p-5 card--stats-light-1'
+          }
+        >
+          <h5
+            className={
+              props.darkMode
+                ? 'text-center letter-spacing'
+                : 'text-center letter-spacing light--text-color'
+            }
+          >
+            Paris
+          </h5>
+          <h6 className={props.darkMode ? '' : 'light--text-color'}>
+            Say hello
+          </h6>
+          <h6
+            className={
+              props.darkMode
+                ? 'fst-italic mb-5 dark--text-color'
+                : 'fst-italic mb-5'
+            }
+          >
+            email@site.com
+          </h6>
+          <h6 className={props.darkMode ? '' : 'light--text-color'}>Phone</h6>
+          <h6
+            className={
+              props.darkMode
+                ? 'fst-italic mb-5 dark--text-color'
+                : 'fst-italic mb-5'
+            }
+          >
+            +369 35 353562 3544
+          </h6>
+          <h6 className={props.darkMode ? '' : 'light--text-color'}>Address</h6>
+          <h6
+            className={
+              props.darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
+            }
+          >
+            4th Avenue 4856, New York
+          </h6>
+        </div>
+        <div
+          className={
+            props.darkMode
+              ? 'col-xl-3 p-5 card--stats-dark'
+              : 'col-xl-3 p-5 card--stats-light-2'
+          }
+        >
+          <h5
+            className={
+              props.darkMode
+                ? 'text-center letter-spacing'
+                : 'text-center letter-spacing light--text-color'
+            }
+          >
+            Barcelona
+          </h5>
+          <h6 className={props.darkMode ? '' : 'light--text-color'}>
+            Say hello
+          </h6>
+          <h6
+            className={
+              props.darkMode
+                ? 'fst-italic mb-5 dark--text-color'
+                : 'fst-italic mb-5'
+            }
+          >
+            email@site.com
+          </h6>
+          <h6 className={props.darkMode ? '' : 'light--text-color'}>Phone</h6>
+          <h6
+            className={
+              props.darkMode
+                ? 'fst-italic mb-5 dark--text-color'
+                : 'fst-italic mb-5'
+            }
+          >
+            +369 35 353562 3544
+          </h6>
+          <h6 className={props.darkMode ? '' : 'light--text-color'}>Address</h6>
+          <h6
+            className={
+              props.darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
+            }
+          >
+            4th Avenue 4856, New York
+          </h6>
+        </div>
+      </div>
     </main>
   )
 }
