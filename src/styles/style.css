@@ -225,7 +225,7 @@ img {
   position: relative;
 }
 .card--image {
-  width: 700px; /*to fix image and its title*/
+  width: 100%; /*to fix image and its title*/
 }
 .card--stats-light {
   background-color: #e9c1c1;
