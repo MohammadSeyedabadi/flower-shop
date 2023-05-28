@@ -1,4 +1,6 @@
 import React from 'react'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import Card from '../../components/Card'
 import ProductsList from '../../data/ProductsList'
 import 'bootstrap-icons/font/bootstrap-icons.css'
@@ -364,33 +366,33 @@ export default function Mainpage(props) {
         </div>
       </div>
 
-      <div
-        className={
-          props.darkMode
-            ? 'row m-5 p-5 card--stats-dark'
-            : 'row m-5 p-5 card--stats-light'
-        }
+      <Row
+        className={`p-5 mb-5 ${
+          props.darkMode ? 'card--stats-dark' : 'card--stats-light'
+        }`}
       >
-        <p
-          className={
-            props.darkMode
-              ? 'text-center fs-4 dark--text-color'
-              : 'text-center fs-4'
-          }
-        >
-          Every flower is a soul blossoming in nature. A flower does not think
-          of competing with the flower next to it. It just blooms.
-        </p>
-        <p
-          className={
-            props.darkMode
-              ? 'text-center fs-6 fst-italic'
-              : 'text-center fs-6 fst-italic light--text-color'
-          }
-        >
-          Andrew Mott
-        </p>
-      </div>
+        <Col>
+          <p
+            className={
+              props.darkMode
+                ? 'text-center fs-4 dark--text-color'
+                : 'text-center fs-4'
+            }
+          >
+            Every flower is a soul blossoming in nature. A flower does not think
+            of competing with the flower next to it. It just blooms.
+          </p>
+          <p
+            className={
+              props.darkMode
+                ? 'text-center fs-6 fst-italic'
+                : 'text-center fs-6 fst-italic light--text-color'
+            }
+          >
+            Andrew Mott
+          </p>
+        </Col>
+      </Row>
 
       <div className="text-center pt-5 mb-5">
         <h1
@@ -412,149 +414,147 @@ export default function Mainpage(props) {
           Where to find us
         </h2>
       </div>
-      <div className="row gy-2 justify-content-evenly">
-        <div
-          className={
-            props.darkMode
-              ? 'col-xl-3 p-5 card--stats-dark'
-              : 'col-xl-3 p-5 card--stats-light'
-          }
-        >
-          <h5
-            className={
-              props.darkMode
-                ? 'text-center letter-spacing'
-                : 'text-center letter-spacing light--text-color'
-            }
+
+      <Row xs={1} xl={3} className="gy-4">
+        <Col>
+          <div className={`p-5 ${props.darkMode ? 'card--stats-dark' : 'card--stats-light'}`}
           >
-            Toronto
-          </h5>
-          <h6 className={props.darkMode ? '' : 'light--text-color'}>
-            Say hello
-          </h6>
-          <h6
-            className={
-              props.darkMode
-                ? 'fst-italic mb-5 dark--text-color'
-                : 'fst-italic mb-5'
-            }
+            <h5
+              className={
+                props.darkMode
+                  ? 'text-center letter-spacing'
+                  : 'text-center letter-spacing light--text-color'
+              }
+            >
+              Toronto
+            </h5>
+            <h6 className={props.darkMode ? '' : 'light--text-color'}>
+              Say hello
+            </h6>
+            <h6
+              className={
+                props.darkMode
+                  ? 'fst-italic mb-5 dark--text-color'
+                  : 'fst-italic mb-5'
+              }
+            >
+              email@site.com
+            </h6>
+            <h6 className={props.darkMode ? '' : 'light--text-color'}>Phone</h6>
+            <h6
+              className={
+                props.darkMode
+                  ? 'fst-italic mb-5 dark--text-color'
+                  : 'fst-italic mb-5'
+              }
+            >
+              +369 35 353562 3544
+            </h6>
+            <h6 className={props.darkMode ? '' : 'light--text-color'}>
+              Address
+            </h6>
+            <h6
+              className={
+                props.darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
+              }
+            >
+              4th Avenue 4856, New York
+            </h6>
+          </div>
+        </Col>
+        <Col>
+          <div className={`p-5 ${props.darkMode ? 'card--stats-dark' : 'card--stats-light-1'}`}
           >
-            email@site.com
-          </h6>
-          <h6 className={props.darkMode ? '' : 'light--text-color'}>Phone</h6>
-          <h6
-            className={
-              props.darkMode
-                ? 'fst-italic mb-5 dark--text-color'
-                : 'fst-italic mb-5'
-            }
+            <h5
+              className={
+                props.darkMode
+                  ? 'text-center letter-spacing'
+                  : 'text-center letter-spacing light--text-color'
+              }
+            >
+              Paris
+            </h5>
+            <h6 className={props.darkMode ? '' : 'light--text-color'}>
+              Say hello
+            </h6>
+            <h6
+              className={
+                props.darkMode
+                  ? 'fst-italic mb-5 dark--text-color'
+                  : 'fst-italic mb-5'
+              }
+            >
+              email@site.com
+            </h6>
+            <h6 className={props.darkMode ? '' : 'light--text-color'}>Phone</h6>
+            <h6
+              className={
+                props.darkMode
+                  ? 'fst-italic mb-5 dark--text-color'
+                  : 'fst-italic mb-5'
+              }
+            >
+              +369 35 353562 3544
+            </h6>
+            <h6 className={props.darkMode ? '' : 'light--text-color'}>
+              Address
+            </h6>
+            <h6
+              className={
+                props.darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
+              }
+            >
+              4th Avenue 4856, New York
+            </h6>
+          </div>
+        </Col>
+        <Col>
+          <div className={`p-5 ${props.darkMode ? 'card--stats-dark' : 'card--stats-light-2'}`}
           >
-            +369 35 353562 3544
-          </h6>
-          <h6 className={props.darkMode ? '' : 'light--text-color'}>Address</h6>
-          <h6
-            className={
-              props.darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
-            }
-          >
-            4th Avenue 4856, New York
-          </h6>
-        </div>
-        <div
-          className={
-            props.darkMode
-              ? 'col-xl-3 p-5 card--stats-dark'
-              : 'col-xl-3 p-5 card--stats-light-1'
-          }
-        >
-          <h5
-            className={
-              props.darkMode
-                ? 'text-center letter-spacing'
-                : 'text-center letter-spacing light--text-color'
-            }
-          >
-            Paris
-          </h5>
-          <h6 className={props.darkMode ? '' : 'light--text-color'}>
-            Say hello
-          </h6>
-          <h6
-            className={
-              props.darkMode
-                ? 'fst-italic mb-5 dark--text-color'
-                : 'fst-italic mb-5'
-            }
-          >
-            email@site.com
-          </h6>
-          <h6 className={props.darkMode ? '' : 'light--text-color'}>Phone</h6>
-          <h6
-            className={
-              props.darkMode
-                ? 'fst-italic mb-5 dark--text-color'
-                : 'fst-italic mb-5'
-            }
-          >
-            +369 35 353562 3544
-          </h6>
-          <h6 className={props.darkMode ? '' : 'light--text-color'}>Address</h6>
-          <h6
-            className={
-              props.darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
-            }
-          >
-            4th Avenue 4856, New York
-          </h6>
-        </div>
-        <div
-          className={
-            props.darkMode
-              ? 'col-xl-3 p-5 card--stats-dark'
-              : 'col-xl-3 p-5 card--stats-light-2'
-          }
-        >
-          <h5
-            className={
-              props.darkMode
-                ? 'text-center letter-spacing'
-                : 'text-center letter-spacing light--text-color'
-            }
-          >
-            Barcelona
-          </h5>
-          <h6 className={props.darkMode ? '' : 'light--text-color'}>
-            Say hello
-          </h6>
-          <h6
-            className={
-              props.darkMode
-                ? 'fst-italic mb-5 dark--text-color'
-                : 'fst-italic mb-5'
-            }
-          >
-            email@site.com
-          </h6>
-          <h6 className={props.darkMode ? '' : 'light--text-color'}>Phone</h6>
-          <h6
-            className={
-              props.darkMode
-                ? 'fst-italic mb-5 dark--text-color'
-                : 'fst-italic mb-5'
-            }
-          >
-            +369 35 353562 3544
-          </h6>
-          <h6 className={props.darkMode ? '' : 'light--text-color'}>Address</h6>
-          <h6
-            className={
-              props.darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
-            }
-          >
-            4th Avenue 4856, New York
-          </h6>
-        </div>
-      </div>
+            <h5
+              className={
+                props.darkMode
+                  ? 'text-center letter-spacing'
+                  : 'text-center letter-spacing light--text-color'
+              }
+            >
+              Barcelona
+            </h5>
+            <h6 className={props.darkMode ? '' : 'light--text-color'}>
+              Say hello
+            </h6>
+            <h6
+              className={
+                props.darkMode
+                  ? 'fst-italic mb-5 dark--text-color'
+                  : 'fst-italic mb-5'
+              }
+            >
+              email@site.com
+            </h6>
+            <h6 className={props.darkMode ? '' : 'light--text-color'}>Phone</h6>
+            <h6
+              className={
+                props.darkMode
+                  ? 'fst-italic mb-5 dark--text-color'
+                  : 'fst-italic mb-5'
+              }
+            >
+              +369 35 353562 3544
+            </h6>
+            <h6 className={props.darkMode ? '' : 'light--text-color'}>
+              Address
+            </h6>
+            <h6
+              className={
+                props.darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
+              }
+            >
+              4th Avenue 4856, New York
+            </h6>
+          </div>
+        </Col>
+      </Row>
     </main>
   )
 }
