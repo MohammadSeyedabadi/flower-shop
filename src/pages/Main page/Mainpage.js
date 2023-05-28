@@ -415,9 +415,12 @@ export default function Mainpage(props) {
         </h2>
       </div>
 
-      <Row xs={1} xl={3} className="gy-4">
+      <Row xs={1} xl={3} className="gy-4 pb-5">
         <Col>
-          <div className={`p-5 ${props.darkMode ? 'card--stats-dark' : 'card--stats-light'}`}
+          <div
+            className={`p-5 ${
+              props.darkMode ? 'card--stats-dark' : 'card--stats-light'
+            }`}
           >
             <h5
               className={
@@ -463,7 +466,10 @@ export default function Mainpage(props) {
           </div>
         </Col>
         <Col>
-          <div className={`p-5 ${props.darkMode ? 'card--stats-dark' : 'card--stats-light-1'}`}
+          <div
+            className={`p-5 ${
+              props.darkMode ? 'card--stats-dark' : 'card--stats-light-1'
+            }`}
           >
             <h5
               className={
@@ -509,7 +515,10 @@ export default function Mainpage(props) {
           </div>
         </Col>
         <Col>
-          <div className={`p-5 ${props.darkMode ? 'card--stats-dark' : 'card--stats-light-2'}`}
+          <div
+            className={`p-5 ${
+              props.darkMode ? 'card--stats-dark' : 'card--stats-light-2'
+            }`}
           >
             <h5
               className={
@@ -554,6 +563,18 @@ export default function Mainpage(props) {
             </h6>
           </div>
         </Col>
+      </Row>
+      <Row className="mt-5">
+        <Col lg={6}>
+          <div className="p-5 localflorist">
+            <h1 className={`text-center letter-spacing ${props.darkMode ? "" : "light--text-color"}`}>Local florist</h1>
+            <p className={`text-center mt-4 fs-4 px-lg-5 ${props.darkMode ? "dark--text-color" : ""}`}>
+              Lorem ipsum dolor sit amet, pri autem nemore bonorum te. Autem
+              fierent ullamcorper ius no.
+            </p>
+          </div>
+        </Col>
+        <Col lg={6}></Col>
       </Row>
     </main>
   )
