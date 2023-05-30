@@ -593,17 +593,69 @@ export default function Mainpage(props) {
             </div>
 
             <p
-              className={
-                props.darkMode
-                  ? 'text-center fst-italic'
-                  : 'text-center fst-italic light--text-color'
-              }
+              className={`text-center fst-italic ${props.darkMode ? "" : "light--text-color" }`}
             >
               florist, Mary Byrd
             </p>
           </div>
         </Col>
-        <Col lg={6}></Col>
+        <Col lg={6}>
+          <div
+            className={`p-5 ${
+              props.darkMode ? 'card--stats-dark' : 'localflorist'
+            }`}
+          >
+            <h1
+              className={`text-center letter-spacing ${
+                props.darkMode ? '' : 'light--text-color'
+              }`}
+            >
+              Ask us a question
+            </h1>
+            <p
+              className={`mt-4 fs-4 px-lg-5 ${
+                props.darkMode ? 'dark--text-color' : ''
+              }`}
+            >
+              Lorem ipsum dolor sit amet, pri autem nemore bonorum te. Autem
+              fierent ullamcorper ius no.
+            </p>
+            <div>
+              <label
+                htmlFor="email"
+                className={`fw-semibold ${
+                  props.darkMode ? 'form--label-dark' : 'form--label'
+                }`}
+              ></label>
+              <input
+                type="email"
+                id="email"
+                className={`fw-semibold p-1 mb-3 ${
+                  props.darkMode ? 'form--input-dark' : 'form--input'
+                }`}
+                placeholder="Your Email"
+                required
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="message"
+                className={`fw-semibold ${
+                  props.darkMode ? 'form--label-dark' : 'form--label'
+                }`}
+              ></label>
+              <textarea
+                id="message"
+                rows={4}
+                className={`fw-semibold p-1 mb-3 ${
+                  props.darkMode ? 'form--input-dark' : 'form--input'
+                }`}
+                placeholder="Your message"
+                required
+              />
+            </div>
+          </div>
+        </Col>
       </Row>
     </main>
   )
