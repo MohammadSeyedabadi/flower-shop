@@ -387,8 +387,8 @@ export default function Mainpage(props) {
           <p
             className={
               props.darkMode
-                ? 'text-center fs-6 fst-italic'
-                : 'text-center fs-6 fst-italic light--text-color'
+                ? 'text-center fst-italic'
+                : 'text-center fst-italic light--text-color'
             }
           >
             Andrew Mott
@@ -592,7 +592,15 @@ export default function Mainpage(props) {
               <Image src={P20} fluid alt="signature" />
             </div>
 
-            <p class="text-center fst-italic">florist, Mary Byrd</p>
+            <p
+              className={
+                props.darkMode
+                  ? 'text-center fst-italic'
+                  : 'text-center fst-italic light--text-color'
+              }
+            >
+              florist, Mary Byrd
+            </p>
           </div>
         </Col>
         <Col lg={6}></Col>
