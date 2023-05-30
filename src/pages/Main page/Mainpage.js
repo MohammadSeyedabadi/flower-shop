@@ -1,6 +1,7 @@
 import React from 'react'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Image from 'react-bootstrap/Image'
 import Card from '../../components/Card'
 import ProductsList from '../../data/ProductsList'
 import 'bootstrap-icons/font/bootstrap-icons.css'
@@ -12,6 +13,7 @@ import P5 from '../../images/p5.jpg'
 import P6 from '../../images/p6.jpg'
 import P17 from '../../images/p17.jpg'
 import P18 from '../../images/p18.jpg'
+import P20 from '../../images/p20.png'
 
 export default function Mainpage(props) {
   const cards = ProductsList.slice(0, 8).map((item) => {
@@ -164,7 +166,7 @@ export default function Mainpage(props) {
         >
           Our flowers
         </h1>
-        <h2
+        <h1
           className={
             props.darkMode
               ? 'fs-1 letter-spacing'
@@ -172,7 +174,7 @@ export default function Mainpage(props) {
           }
         >
           Choose your favorite
-        </h2>
+        </h1>
       </div>
       <div className="row px-5 mb-5 gy-2 gx-2 justify-content-evenly cards--container">
         {cards}
@@ -209,7 +211,7 @@ export default function Mainpage(props) {
         >
           Our services
         </h1>
-        <h2
+        <h1
           className={
             props.darkMode
               ? 'fs-1 letter-spacing'
@@ -217,7 +219,7 @@ export default function Mainpage(props) {
           }
         >
           Flowers for every occasion
-        </h2>
+        </h1>
       </div>
       <div className="row gy-2 mb-5 d-flex justyfy-content-center">
         <div className="col-md-6 d-flex justify-content-center">
@@ -566,12 +568,31 @@ export default function Mainpage(props) {
       </Row>
       <Row className="mt-5">
         <Col lg={6}>
-          <div className="p-5 localflorist">
-            <h1 className={`text-center letter-spacing ${props.darkMode ? "" : "light--text-color"}`}>Local florist</h1>
-            <p className={`text-center mt-4 fs-4 px-lg-5 ${props.darkMode ? "dark--text-color" : ""}`}>
+          <div
+            className={`p-5 ${
+              props.darkMode ? 'card--stats-dark' : 'localflorist'
+            }`}
+          >
+            <h1
+              className={`text-center letter-spacing ${
+                props.darkMode ? '' : 'light--text-color'
+              }`}
+            >
+              Local florist
+            </h1>
+            <p
+              className={`text-center mt-4 fs-4 px-lg-5 ${
+                props.darkMode ? 'dark--text-color' : ''
+              }`}
+            >
               Lorem ipsum dolor sit amet, pri autem nemore bonorum te. Autem
               fierent ullamcorper ius no.
             </p>
+            <div className="d-flex justify-content-center">
+              <Image src={P20} fluid alt="signature" />
+            </div>
+
+            <p class="text-center fst-italic">florist, Mary Byrd</p>
           </div>
         </Col>
         <Col lg={6}></Col>
