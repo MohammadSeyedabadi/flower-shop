@@ -601,12 +601,12 @@ export default function Mainpage(props) {
         </Col>
         <Col lg={6}>
           <div
-            className={`p-5 ${
+            className={`p-5 text-center ${
               props.darkMode ? 'card--stats-dark' : 'localflorist'
             }`}
           >
             <h1
-              className={`text-center letter-spacing ${
+              className={`letter-spacing ${
                 props.darkMode ? '' : 'light--text-color'
               }`}
             >
