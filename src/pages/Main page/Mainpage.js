@@ -78,6 +78,27 @@ export default function Mainpage(props) {
     )
   }
 
+  const [status, setStatus] = React.useState('Submit')
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setStatus('Sending...')
+    const { email, message } = e.target.elements
+    let details = {
+      email: email.value,
+      message: message.value,
+    }
+    let response = await fetch('http://localhost:5000/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify(details),
+    })
+    setStatus('Submit')
+    let result = await response.json()
+    alert(result.status)
+  }
+
   return (
     <main
       className={
@@ -569,7 +590,7 @@ export default function Mainpage(props) {
       <Row className="mt-5">
         <Col lg={6}>
           <div
-            className={`p-5 ${
+            className={`p-5 h-100 ${
               props.darkMode ? 'card--stats-dark' : 'localflorist'
             }`}
           >
@@ -593,7 +614,9 @@ export default function Mainpage(props) {
             </div>
 
             <p
-              className={`text-center fst-italic ${props.darkMode ? "" : "light--text-color" }`}
+              className={`text-center fst-italic ${
+                props.darkMode ? '' : 'light--text-color'
+              }`}
             >
               florist, Mary Byrd
             </p>
@@ -601,7 +624,7 @@ export default function Mainpage(props) {
         </Col>
         <Col lg={6}>
           <div
-            className={`p-5 text-center ${
+            className={`p-5 text-center h-100 ${
               props.darkMode ? 'card--stats-dark' : 'localflorist'
             }`}
           >
@@ -630,7 +653,7 @@ export default function Mainpage(props) {
               <input
                 type="email"
                 id="email"
-                className={`fw-semibold p-1 mb-3 ${
+                className={`fw-semibold p-1 mb-3 w-100 ${
                   props.darkMode ? 'form--input-dark' : 'form--input'
                 }`}
                 placeholder="Your Email"
@@ -647,13 +670,21 @@ export default function Mainpage(props) {
               <textarea
                 id="message"
                 rows={4}
-                className={`fw-semibold p-1 mb-3 ${
+                className={`fw-semibold p-1 mb-3 w-100  ${
                   props.darkMode ? 'form--input-dark' : 'form--input'
                 }`}
                 placeholder="Your message"
                 required
               />
             </div>
+            <button
+              type="submit"
+              className={`d-flex form--button ${
+                props.darkMode ? 'form--button-dark' : ''
+              }`}
+            >
+              {status}
+            </button>
           </div>
         </Col>
       </Row>
