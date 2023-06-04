@@ -1,3 +1,10 @@
+:root {
+  --gray-3: #ddd;
+  --gray-4: #bbb;
+  --scrollbar-color: var(--gray-3);
+  --scrollbar-track: var(--gray-4);
+}
+
 *,
 *::before,
 *::after {
@@ -237,8 +244,8 @@ img {
 .card--stats-light-2 {
   background-color: #c2c1e9;
 }
-.card--stats-light-3{
-  background-color: rgba(162, 207, 151, 0.774);
+.card--stats-light-3 {
+  background-color: rgb(162, 207, 151);
 }
 .card--badge {
   position: absolute;
@@ -321,13 +328,13 @@ input:focus {
   background-color: #fff8dae0;
 }
 
-.form--input-2{
-  background-color: rgba(162, 207, 151, 0.774);
+.form--input-2 {
+  background-color: rgb(162, 207, 151);
   color: #2c2c2c;
 }
 
-.form--input-2:focus{
-  background-color: rgba(162, 207, 151, 0.774);
+.form--input-2:focus {
+  background-color: rgb(162, 207, 151);
   color: #2c2c2c;
 }
 
@@ -355,9 +362,9 @@ input:focus {
   line-height: 1;
   padding: 0.75rem 1.2rem;
 }
-.form--button-2{
+.form--button-2 {
   align-items: center;
-  background-color: rgba(162, 207, 151, 0.774) !important;
+  background-color: rgb(118, 207, 96) !important;
   border: none;
   border-bottom: 1px solid rgb(85, 85, 85);
   border-radius: 5px;
@@ -367,7 +374,7 @@ input:focus {
   padding: 0.75rem 1.2rem;
 }
 
-.form--button-2:hover{
+.form--button-2:hover {
   align-items: center;
   background-color: rgb(139, 206, 122);
   border: none;
@@ -403,8 +410,18 @@ input:focus {
 }
 /* ****************************** Main styles end ****************************** */
 
-
 .footer {
   margin-top: auto;
   padding-top: 108px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color);
+  border-radius: 2px;
 }

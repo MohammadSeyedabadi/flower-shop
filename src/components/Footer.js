@@ -9,7 +9,7 @@ import InputGroup from 'react-bootstrap/InputGroup'
 export default function Footer({ darkMode }) {
   return (
     <footer className="footer">
-      <Row className="text-center">
+      <Row className="text-center d-flex align-items-center">
         <Col
           md={6}
           className={`newsletter py-5 ${
