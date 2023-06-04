@@ -587,7 +587,7 @@ export default function Mainpage(props) {
           </div>
         </Col>
       </Row>
-      <Row className="mt-5">
+      <Row className="mt-5 gy-2">
         <Col lg={6}>
           <div
             className={`p-5 h-100 ${

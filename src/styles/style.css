@@ -237,7 +237,9 @@ img {
 .card--stats-light-2 {
   background-color: #c2c1e9;
 }
-
+.card--stats-light-3{
+  background-color: rgba(162, 207, 151, 0.774);
+}
 .card--badge {
   position: absolute;
   top: 10px;
@@ -305,8 +307,9 @@ img {
 
 textarea,
 input {
-  border: none;
-  border-bottom: 1px solid rgb(85, 85, 85);
+  border: none !important;
+  border-bottom: 1px solid rgb(85, 85, 85) !important;
+  box-shadow: none !important;
 }
 
 textarea:focus,
@@ -318,7 +321,26 @@ input:focus {
   background-color: #fff8dae0;
 }
 
+.form--input-2{
+  background-color: rgba(162, 207, 151, 0.774);
+  color: #2c2c2c;
+}
+
+.form--input-2:focus{
+  background-color: rgba(162, 207, 151, 0.774);
+  color: #2c2c2c;
+}
+
 .form--input-dark {
+  background-color: #0d0e11;
+  color: #fff;
+}
+
+.form--input-dark-2 {
+  background-color: #0d0e11;
+  color: #fff;
+}
+.form--input-dark-2:focus {
   background-color: #0d0e11;
   color: #fff;
 }
@@ -333,6 +355,30 @@ input:focus {
   line-height: 1;
   padding: 0.75rem 1.2rem;
 }
+.form--button-2{
+  align-items: center;
+  background-color: rgba(162, 207, 151, 0.774) !important;
+  border: none;
+  border-bottom: 1px solid rgb(85, 85, 85);
+  border-radius: 5px;
+  color: #2c2c2c !important;
+  letter-spacing: 0;
+  line-height: 1;
+  padding: 0.75rem 1.2rem;
+}
+
+.form--button-2:hover{
+  align-items: center;
+  background-color: rgb(139, 206, 122);
+  border: none;
+  border-bottom: 1px solid rgb(85, 85, 85);
+  border-radius: 5px;
+  color: #2c2c2c;
+  letter-spacing: 0;
+  line-height: 1;
+  padding: 0.75rem 1.2rem;
+}
+
 .form--button:hover {
   align-items: center;
   background-color: #ffc9c9;
@@ -356,6 +402,7 @@ input:focus {
   color: #e6e6e6;
 }
 /* ****************************** Main styles end ****************************** */
+
 
 .footer {
   margin-top: auto;
