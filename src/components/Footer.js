@@ -16,13 +16,13 @@ export default function Footer({ darkMode }) {
           <div className="text-center h-100"
           >
            <h1
-            className={`display-5 letter-spacing  ${
+            className={`display-5 letter-spacing mb-4 ${
               darkMode ? '' : 'light--text-color'
             }`}
           >
             Subscribe to our newsletter
           </h1>
-          <InputGroup className="mt-5 mb-3">
+          <InputGroup>
             <Form.Control
               className={darkMode ? 'form--input-dark-2' : 'form--input-2'}
               placeholder="Your Email"
@@ -52,7 +52,7 @@ export default function Footer({ darkMode }) {
           >
             Connect to us
           </h1>
-           <Row xs={4} className="px-5 gy-5">
+           <Row xs={4} className="px-5">
            <Col><i class="bi bi-facebook h1"></i></Col>
            <Col><i class="bi bi-instagram h1"></i></Col>
            <Col><i class="bi bi-twitter h1"></i></Col>
