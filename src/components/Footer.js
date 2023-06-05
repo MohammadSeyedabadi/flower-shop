@@ -4,26 +4,24 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
-//import 'bootstrap-icons/font/bootstrap-icons.css'
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 export default function Footer({ darkMode }) {
   return (
     <footer className="footer">
-      <Row className="text-center d-flex align-items-center">
-        <Col
-          md={6}
-          className={`newsletter py-5 ${
+      <Row className="mt-5 gy-2">
+        <Col lg={6} className={`newsletter py-5 ${
             darkMode ? 'card--stats-dark' : 'card--stats-light-3'
-          }`}
-        >
-          <h1
+          }`}>
+          <div className="text-center h-100"
+          >
+           <h1
             className={`display-5 letter-spacing mb-4 ${
               darkMode ? '' : 'light--text-color'
             }`}
           >
             Subscribe to our newsletter
           </h1>
-
           <InputGroup className="mb-3">
             <Form.Control
               className={darkMode ? 'form--input-dark-2' : 'form--input-2'}
@@ -40,8 +38,28 @@ export default function Footer({ darkMode }) {
               Submit
             </Button>
           </InputGroup>
+          </div>
         </Col>
-        <Col md={6}>woril</Col>
+        <Col lg={6} className={`py-5 ${
+            darkMode ? 'card--stats-dark' : 'card--stats-light-3'
+          }`}>
+          <div className="text-center h-100"
+          >
+           <h1
+            className={`display-5 letter-spacing mb-4 ${
+              darkMode ? '' : 'light--text-color'
+            }`}
+          >
+            Connect to us
+          </h1>
+           <Row xs={3} className="gy-5">
+           <Col><i class="bi bi-facebook h1"></i></Col>
+           <Col><i class="bi bi-instagram h1"></i></Col>
+           <Col><i class="bi bi-twitter h1"></i></Col>
+           <Col><i class="bi bi-youtube h1"></i></Col>
+           </Row>
+          </div>
+        </Col>
       </Row>
     </footer>
   )
