@@ -4,12 +4,12 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
-import 'bootstrap-icons/font/bootstrap-icons.css'
+//import 'bootstrap-icons/font/bootstrap-icons.css'
 
 export default function Footer({ darkMode }) {
   return (
     <footer className="footer">
-      <Row className="mt-5 gy-2">
+      <Row className="mt-5 gy-1">
         <Col lg={6} className={`newsletter py-5 ${
             darkMode ? 'card--stats-dark' : 'card--stats-light-3'
           }`}>
