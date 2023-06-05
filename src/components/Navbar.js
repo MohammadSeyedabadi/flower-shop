@@ -1,43 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 import 'bootstrap-icons/font/bootstrap-icons.css'
-import { Link, useMatch, useResolvedPath,useLocation } from 'react-router-dom'
+import { Link, useMatch, useResolvedPath, useLocation } from 'react-router-dom'
 
+export default function Navbar({ darkMode, toggleDarkMode }) {
+  // React.useEffect(() => {
+  //   //const element = document.getElementById('navbar');
+  //   const navbarToggle = document.querySelector('#navbar-toggle')
+  //   const navbarMenu = document.querySelector('#navbar-menu')
+  //   const navbarLinksContainer = navbarMenu.querySelector('.navbar-links')
+  //   let isNavbarExpanded = navbarToggle.getAttribute('aria-expanded') === 'true'
 
-export default function Navbar(props) {
-  React.useEffect(() => {
-    //const element = document.getElementById('navbar');
-    const navbarToggle = document.querySelector('#navbar-toggle')
-    const navbarMenu = document.querySelector('#navbar-menu')
-    const navbarLinksContainer = navbarMenu.querySelector('.navbar-links')
-    let isNavbarExpanded = navbarToggle.getAttribute('aria-expanded') === 'true'
+  //   const toggleNavbarVisibility = () => {
+  //     isNavbarExpanded = !isNavbarExpanded
+  //     navbarToggle.setAttribute('aria-expanded', isNavbarExpanded)
+  //   }
 
-    const toggleNavbarVisibility = () => {
-      isNavbarExpanded = !isNavbarExpanded
-      navbarToggle.setAttribute('aria-expanded', isNavbarExpanded)
-    }
+  //   navbarToggle.addEventListener('click', toggleNavbarVisibility)
 
-    navbarToggle.addEventListener('click', toggleNavbarVisibility)
+  //   navbarLinksContainer.addEventListener('click', (e) => e.stopPropagation())
+  //   navbarMenu.addEventListener('click', toggleNavbarVisibility)
+  // }, [])
 
-    navbarLinksContainer.addEventListener('click', (e) => e.stopPropagation())
-    navbarMenu.addEventListener('click', toggleNavbarVisibility)
-  }, [])
+  // **********************************************************************
+
+  const [isNavbarExpanded, setisNavbarExpanded] = useState(false)
+
+  function toggleNavbarVisibility() {
+    setisNavbarExpanded((prevMode) => !prevMode)
+  }
 
   const location = useLocation()
 
   return (
     <header id="navbar">
-      <nav
-        className={
-          props.darkMode ? 'dark navbar-container' : 'navbar-container'
-        }
-      >
+      <nav className={`navbar-container ${darkMode ? 'dark' : ''}`}>
         <Link
           to="/"
-          className={
-            props.darkMode
-              ? 'ms-1 ms-lg-3 fs-6 fst-italic fw-semibold dark home-link letter-spacing'
-              : 'ms-1 ms-lg-3 fs-6 fst-italic fw-semibold home-link letter-spacing'
-          }
+          className={`ms-1 ms-lg-3 fs-6 fst-italic fw-semibold home-link letter-spacing ${
+            darkMode ? 'dark' : ''
+          }`}
         >
           {/* <div className="navbar-logo"></div> */}
           Special offers
@@ -47,66 +48,57 @@ export default function Navbar(props) {
           location.pathname === '/cart') && (
           <Link to="/cart">
             <i
-              className={
-                props.darkMode
-                  ? 'bi bi-cart3 me-1 me-lg-3 fs-4 navbar--icon'
-                  : 'bi bi-cart3 me-1 me-lg-3 fs-4 navbar--icon'
-              }
+              className="bi bi-cart3 me-1 me-lg-3 fs-4 navbar--icon"
             ></i>
           </Link>
         )}
 
         <div>
           <i
-            className={
-              props.darkMode
-                ? 'bi bi-sun me-1 me-lg-3 fs-4 navbar--icon'
-                : 'bi bi-moon me-1 me-lg-3 fs-4 navbar--icon'
-            }
-            onClick={props.toggleDarkMode}
+          className={`me-1 me-lg-3 fs-4 navbar--icon ${darkMode ? "bi bi-sun" : "bi bi-moon"}`}
+          onClick={toggleDarkMode}
           ></i>
         </div>
 
         <button
           type="button"
           id="navbar-toggle"
+          onClick={toggleNavbarVisibility}
           className="me-1 me-lg-3"
           aria-controls="navbar-menu"
           aria-label="Toggle menu"
-          aria-expanded="false"
+          aria-expanded={isNavbarExpanded}
         >
           <span className="icon-bar"></span>
           <span className="icon-bar"></span>
           <span className="icon-bar"></span>
         </button>
-        <div id="navbar-menu" aria-labelledby="navbar-toggle">
-          <ul className={props.darkMode ? 'dark navbar-links' : 'navbar-links'}>
+        <div
+          id="navbar-menu"
+          onClick={toggleNavbarVisibility}
+          aria-labelledby="navbar-toggle"
+        >
+          <ul
+            className={`navbar-links ${darkMode ? 'dark' : ''}`}
+            onClick={(e) => e.stopPropagation()}
+          >
             <CustomLink
-              className={
-                props.darkMode
-                  ? 'dark hoverDark navbar-link fs-3'
-                  : 'navbar-link fs-3'
-              }
+              className={`navbar-link fs-3 ${darkMode ? "dark hoverDark" : ""}`}
+              onClick={toggleNavbarVisibility}
               to="/products"
             >
               Products
             </CustomLink>
             <CustomLink
-              className={
-                props.darkMode
-                  ? 'dark hoverDark navbar-link fs-3'
-                  : 'navbar-link fs-3'
-              }
+              className={`navbar-link fs-3 ${darkMode ? "dark hoverDark" : ""}`}
+              onClick={toggleNavbarVisibility}
               to="/"
             >
               Contact
             </CustomLink>
             <CustomLink
-              className={
-                props.darkMode
-                  ? 'dark hoverDark navbar-link fs-3'
-                  : 'navbar-link fs-3'
-              }
+              className={`navbar-link fs-3 ${darkMode ? "dark hoverDark" : ""}`}
+              onClick={toggleNavbarVisibility}
               to="/"
             >
               FAQ
