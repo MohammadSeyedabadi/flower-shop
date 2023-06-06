@@ -1,5 +1,7 @@
 import React from 'react'
 import Slideshow from './Slide show/Slideshow'
+import Services from "./Services/Services"
+import ServicesList from "./Services/ServicesList";
 import { Link } from 'react-router-dom'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -20,6 +22,10 @@ import P20 from '../../images/p20.png'
 export default function Mainpage({ darkMode }) {
   const cards = ProductsList.slice(0, 8).map((item) => {
     return <Card key={item.id} id={item.id} item={item} darkMode={darkMode} />
+  })
+
+  const services = ServicesList.map((item) => {
+    return <Services key={item.id} id={item.id} item={item} darkMode={darkMode}/>
   })
 
   const [status, setStatus] = React.useState('Submit')
@@ -161,9 +167,9 @@ export default function Mainpage({ darkMode }) {
           <Image fluid src={P18} alt="" />
         </Col>
       </Row>
-      <Row className="mb-5 gy-3 d-flex justify-content-center">
-        <Col
-          md={3}
+      <Row xs={1} md={4} className="mb-5 gy-3 d-flex justify-content-center">
+      {services}
+        {/* <Col
           className="d-flex justify-content-sm-center align-items-center"
         >
           <span>
@@ -285,7 +291,7 @@ export default function Mainpage({ darkMode }) {
               </Link>
             </h6>
           </span>
-        </Col>
+        </Col> */}
       </Row>
 
       <Row
