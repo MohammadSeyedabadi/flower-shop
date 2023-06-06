@@ -1,7 +1,7 @@
 import React from 'react'
 import Slideshow from './Slide show/Slideshow'
-import Services from "./Services/Services"
-import ServicesList from "./Services/ServicesList";
+import Services from './Services/Services'
+import ServicesList from './Services/ServicesList'
 import { Link } from 'react-router-dom'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -25,7 +25,9 @@ export default function Mainpage({ darkMode }) {
   })
 
   const services = ServicesList.map((item) => {
-    return <Services key={item.id} id={item.id} item={item} darkMode={darkMode}/>
+    return (
+      <Services key={item.id} id={item.id} item={item} darkMode={darkMode} />
+    )
   })
 
   const [status, setStatus] = React.useState('Submit')
@@ -168,130 +170,7 @@ export default function Mainpage({ darkMode }) {
         </Col>
       </Row>
       <Row xs={1} md={4} className="mb-5 gy-3 d-flex justify-content-center">
-      {services}
-        {/* <Col
-          className="d-flex justify-content-sm-center align-items-center"
-        >
-          <span>
-            <i
-              className={`bi bi-hand-index-thumb fs-1 me-3 ${
-                darkMode ? '' : 'light--text-color'
-              }`}
-            ></i>
-          </span>
-          <span>
-            <h5
-              className={`letter-spacing mb-0 ${
-                darkMode ? '' : 'light--text-color'
-              }`}
-            >
-              Online orders
-            </h5>
-            <h6>
-              <Link
-                to="/"
-                className={`text-decoration-underline fst-italic ${
-                  darkMode ? 'text-white' : 'text-dark'
-                }`}
-              >
-                More info
-              </Link>
-            </h6>
-          </span>
-        </Col>
-        <Col
-          md={3}
-          className="d-flex justify-content-sm-center align-items-center"
-        >
-          <span>
-            <i
-              className={`bi bi-truck fs-1 me-3 ${
-                darkMode ? '' : 'light--text-color'
-              }`}
-            ></i>
-          </span>
-          <span>
-            <h5
-              className={`letter-spacing mb-0 ${
-                darkMode ? '' : 'light--text-color'
-              }`}
-            >
-              Delivery in 2-4 hours
-            </h5>
-            <h6>
-              <Link
-                to="/"
-                className={`text-decoration-underline fst-italic ${
-                  darkMode ? 'text-white' : 'text-dark'
-                }`}
-              >
-                More info
-              </Link>
-            </h6>
-          </span>
-        </Col>
-        <Col
-          md={3}
-          className="d-flex justify-content-sm-center align-items-center"
-        >
-          <span>
-            <i
-              className={`bi bi-droplet fs-1 me-3 ${
-                darkMode ? '' : 'light--text-color'
-              }`}
-            ></i>
-          </span>
-          <span>
-            <h5
-              className={`letter-spacing mb-0 ${
-                darkMode ? '' : 'light--text-color'
-              }`}
-            >
-              Freshness
-            </h5>
-            <h6>
-              <Link
-                to="/"
-                className={`text-decoration-underline fst-italic ${
-                  darkMode ? 'text-white' : 'text-dark'
-                }`}
-              >
-                More info
-              </Link>
-            </h6>
-          </span>
-        </Col>
-        <Col
-          md={3}
-          className="d-flex justify-content-sm-center align-items-center"
-        >
-          <span>
-            <i
-              className={`bi bi-palette fs-1 me-3 ${
-                darkMode ? '' : 'light--text-color'
-              }`}
-            ></i>
-          </span>
-          <span>
-            <h5
-              className={`letter-spacing mb-0 ${
-                darkMode ? '' : 'light--text-color'
-              }`}
-            >
-              Made by artists
-            </h5>
-            <h6>
-              <Link
-                to="/"
-                className={`text-decoration-underline fst-italic ${
-                  darkMode ? 'text-white' : 'text-dark'
-                }`}
-              >
-                More info
-              </Link>
-            </h6>
-          </span>
-        </Col> */}
+        {services}
       </Row>
 
       <Row
