@@ -13,7 +13,7 @@ export default function Footer({ darkMode }) {
       <Row className="mt-5 gy-1">
         <Col
           lg={6}
-          className={`newsletter py-5 ${
+          className={`py-5 ${
             darkMode ? 'card--stats-dark' : 'card--stats-light-3'
           }`}
         >
