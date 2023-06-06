@@ -60,22 +60,22 @@ export default function Footer({ darkMode }) {
             <Row xs={4} className="px-5">
               <Col>
                 <Link to="/">
-                  <i class="bi bi-facebook h1"></i>
+                  <i className="bi bi-facebook h1"></i>
                 </Link>
               </Col>
               <Col>
                 <Link to="/">
-                  <i class="bi bi-instagram h1"></i>
+                  <i className="bi bi-instagram h1"></i>
                 </Link>
               </Col>
               <Col>
                 <Link to="/">
-                  <i class="bi bi-twitter h1"></i>
+                  <i className="bi bi-twitter h1"></i>
                 </Link>
               </Col>
               <Col>
                 <Link to="/">
-                  <i class="bi bi-youtube h1"></i>
+                  <i className="bi bi-youtube h1"></i>
                 </Link>
               </Col>
             </Row>
