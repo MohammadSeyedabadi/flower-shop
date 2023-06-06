@@ -52,7 +52,7 @@ export default function Mainpage({ darkMode }) {
   }
 
   return (
-    <main className={`container-fluid main ${darkMode ? 'dark' : ''}`}>
+    <main className={`main ${darkMode ? 'dark' : ''}`}>
       <Row className="mb-5 d-flex align-items-center">
         <Col md={6} className="d-flex justify-content-center">
           <Image fluid src={Picture} alt="" />
@@ -121,12 +121,7 @@ export default function Mainpage({ darkMode }) {
           Choose your favorite
         </h1>
       </div>
-      <Row
-        xs={1}
-        sm={2}
-        md={4}
-        className="mb-5 gy-2 gx-2 justify-content-evenly cards--container"
-      >
+      <Row xs={1} sm={2} md={4} className="mb-5 g-2 cards--container">
         {cards}
       </Row>
 
@@ -173,25 +168,29 @@ export default function Mainpage({ darkMode }) {
         {services}
       </Row>
 
-      <Row
-        className={`p-5 mb-5 ${
-          darkMode ? 'card--stats-dark' : 'card--stats-light'
-        }`}
-      >
+      <Row>
         <Col>
-          <p
-            className={`text-center fs-4 ${darkMode ? 'dark--text-color' : ''}`}
-          >
-            Every flower is a soul blossoming in nature. A flower does not think
-            of competing with the flower next to it. It just blooms.
-          </p>
-          <p
-            className={`text-center fst-italic ${
-              darkMode ? '' : 'light--text-color'
+          <div
+            className={`p-5 mb-5 ${
+              darkMode ? 'card--stats-dark' : 'card--stats-light'
             }`}
           >
-            Andrew Mott
-          </p>
+            <p
+              className={`text-center fs-4 ${
+                darkMode ? 'dark--text-color' : ''
+              }`}
+            >
+              Every flower is a soul blossoming in nature. A flower does not
+              think of competing with the flower next to it. It just blooms.
+            </p>
+            <p
+              className={`text-center fst-italic ${
+                darkMode ? '' : 'light--text-color'
+              }`}
+            >
+              Andrew Mott
+            </p>
+          </div>
         </Col>
       </Row>
 
