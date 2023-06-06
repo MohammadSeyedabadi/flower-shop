@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
@@ -199,7 +200,9 @@ export default function Mainpage({ darkMode }) {
         <h1 className={`fs-6 fst-italic ${darkMode ? 'dark--text-color' : ''}`}>
           Our services
         </h1>
-        <h1 className={`fs-6 fst-italic ${darkMode ? 'dark--text-color' : ''}`}>
+        <h1  className={`fs-1 letter-spacing ${
+            darkMode ? '' : 'light--text-color'
+          }`}>
           Flowers for every occasion
         </h1>
       </div>
@@ -211,144 +214,132 @@ export default function Mainpage({ darkMode }) {
           <Image fluid src={P18} alt="" />
         </Col>
       </Row>
-      <div className="row gy-3 d-flex justify-content-center mb-5">
-        <div className="col-md-3 d-flex justify-content-sm-center align-items-center">
+      <Row className="mb-5 gy-3 d-flex justify-content-center">
+        <Col
+          md={3}
+          className="d-flex justify-content-sm-center align-items-center"
+        >
           <span>
             <i
-              className={
-                darkMode
-                  ? 'bi bi-hand-index-thumb fs-1 me-3'
-                  : 'bi bi-hand-index-thumb fs-1 light--text-color me-3'
-              }
+              className={`bi bi-hand-index-thumb fs-1 me-3 ${
+                darkMode ? '' : 'light--text-color'
+              }`}
             ></i>
           </span>
           <span>
             <h5
-              className={
-                darkMode
-                  ? 'letter-spacing mb-0'
-                  : 'light--text-color letter-spacing mb-0'
-              }
+              className={`letter-spacing mb-0 ${
+                darkMode ? '' : 'light--text-color'
+              }`}
             >
               Online orders
             </h5>
             <h6>
-              <a
-                href="#"
-                className={
-                  darkMode
-                    ? 'text-white text-decoration-underline fst-italic'
-                    : 'text-dark text-decoration-underline fst-italic'
-                }
+              <Link
+                to="/"
+                className={`text-decoration-underline fst-italic ${
+                  darkMode ? 'text-white' : 'text-dark'
+                }`}
               >
                 More info
-              </a>
+              </Link>
             </h6>
           </span>
-        </div>
-        <div className="col-md-3 d-flex justify-content-sm-center align-items-center">
+        </Col>
+        <Col
+          md={3}
+          className="d-flex justify-content-sm-center align-items-center"
+        >
           <span>
             <i
-              className={
-                darkMode
-                  ? 'bi bi-truck fs-1 me-3'
-                  : 'bi bi-truck fs-1 light--text-color me-3'
-              }
+              className={`bi bi-truck fs-1 me-3 ${
+                darkMode ? '' : 'light--text-color'
+              }`}
             ></i>
           </span>
           <span>
             <h5
-              className={
-                darkMode
-                  ? 'letter-spacing mb-0'
-                  : 'light--text-color letter-spacing mb-0'
-              }
+              className={`letter-spacing mb-0 ${
+                darkMode ? '' : 'light--text-color'
+              }`}
             >
               Delivery in 2-4 hours
             </h5>
             <h6>
-              <a
-                href="#"
-                className={
-                  darkMode
-                    ? 'text-white text-decoration-underline fst-italic'
-                    : 'text-dark text-decoration-underline fst-italic'
-                }
+              <Link
+                to="/"
+                className={`text-decoration-underline fst-italic ${
+                  darkMode ? 'text-white' : 'text-dark'
+                }`}
               >
                 More info
-              </a>
+              </Link>
             </h6>
           </span>
-        </div>
-        <div className="col-md-3 d-flex justify-content-sm-center align-items-center">
+        </Col>
+        <Col
+          md={3}
+          className="d-flex justify-content-sm-center align-items-center"
+        >
           <span>
             <i
-              className={
-                darkMode
-                  ? 'bi bi-droplet fs-1 me-3'
-                  : 'bi bi-droplet fs-1 light--text-color me-3'
-              }
+              className={`bi bi-droplet fs-1 me-3 ${
+                darkMode ? '' : 'light--text-color'
+              }`}
             ></i>
           </span>
           <span>
             <h5
-              className={
-                darkMode
-                  ? 'letter-spacing mb-0'
-                  : 'light--text-color letter-spacing mb-0'
-              }
+              className={`letter-spacing mb-0 ${
+                darkMode ? '' : 'light--text-color'
+              }`}
             >
               Freshness
             </h5>
             <h6>
-              <a
-                href="#"
-                className={
-                  darkMode
-                    ? 'text-white text-decoration-underline fst-italic'
-                    : 'text-dark text-decoration-underline fst-italic'
-                }
+              <Link
+                to="/"
+                className={`text-decoration-underline fst-italic ${
+                  darkMode ? 'text-white' : 'text-dark'
+                }`}
               >
                 More info
-              </a>
+              </Link>
             </h6>
           </span>
-        </div>
-        <div className="col-md-3 d-flex justify-content-sm-center align-items-center">
+        </Col>
+        <Col
+          md={3}
+          className="d-flex justify-content-sm-center align-items-center"
+        >
           <span>
             <i
-              className={
-                darkMode
-                  ? 'bi bi-palette fs-1 me-3'
-                  : 'bi bi-palette fs-1 light--text-color me-3'
-              }
+              className={`bi bi-palette fs-1 me-3 ${
+                darkMode ? '' : 'light--text-color'
+              }`}
             ></i>
           </span>
           <span>
             <h5
-              className={
-                darkMode
-                  ? 'letter-spacing mb-0'
-                  : 'light--text-color letter-spacing mb-0'
-              }
+              className={`letter-spacing mb-0 ${
+                darkMode ? '' : 'light--text-color'
+              }`}
             >
               Made by artists
             </h5>
             <h6>
-              <a
-                href="#"
-                className={
-                  darkMode
-                    ? 'text-white text-decoration-underline fst-italic'
-                    : 'text-dark text-decoration-underline fst-italic'
-                }
+              <Link
+                to="/"
+                className={`text-decoration-underline fst-italic ${
+                  darkMode ? 'text-white' : 'text-dark'
+                }`}
               >
                 More info
-              </a>
+              </Link>
             </h6>
           </span>
-        </div>
-      </div>
+        </Col>
+      </Row>
 
       <Row
         className={`p-5 mb-5 ${
