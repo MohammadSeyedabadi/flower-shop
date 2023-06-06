@@ -15,11 +15,9 @@ import P17 from '../../images/p17.jpg'
 import P18 from '../../images/p18.jpg'
 import P20 from '../../images/p20.png'
 
-export default function Mainpage({darkMode}) {
+export default function Mainpage({ darkMode }) {
   const cards = ProductsList.slice(0, 8).map((item) => {
-    return (
-      <Card key={item.id} id={item.id} item={item} darkMode={darkMode} />
-    )
+    return <Card key={item.id} id={item.id} item={item} darkMode={darkMode} />
   })
 
   const Thumbnail = ({ arr, image, index }) => {
@@ -100,43 +98,56 @@ export default function Mainpage({darkMode}) {
   }
 
   return (
-    <main className={`container-fluid main ${darkMode ? "dark" : "" }`}
-    >
+    <main className={`container-fluid main ${darkMode ? 'dark' : ''}`}>
       <Row className="mb-5 d-flex align-items-center">
         <Col md={6} className="d-flex justify-content-center">
           <Image fluid src={Picture} alt="" />
         </Col>
         <Col md={6}>
-          <h1 className={`letter-spacing ${darkMode ? "" : "light--text-color"}`}
+          <h1
+            className={`letter-spacing ${darkMode ? '' : 'light--text-color'}`}
           >
             We Deliver Amazing Bouquets!
           </h1>
-          <p className={`fs-4 ${darkMode ? "dark--text-color" : ""}`}
-          >
+          <p className={`fs-4 ${darkMode ? 'dark--text-color' : ''}`}>
             Lorem ipsum dolor sit amet summ dolore, eu omnes mnesarchum
             eosatsimuscum primis.
           </p>
           <Row>
             <Col xs={6}>
-              <i className={`bi bi-flower1 fs-1 ${darkMode ? "" : "light--text-color"}`}
+              <i
+                className={`bi bi-flower1 fs-1 ${
+                  darkMode ? '' : 'light--text-color'
+                }`}
               ></i>
-              <h3 className={`mb-2 letter-spacing ${darkMode ? "" : "light--text-color"}`}
+              <h3
+                className={`mb-2 letter-spacing ${
+                  darkMode ? '' : 'light--text-color'
+                }`}
               >
                 Freshcut flowers
               </h3>
-              <h6 className={`fst-italic ${darkMode ? "dark--text-color" : ""}`}
+              <h6
+                className={`fst-italic ${darkMode ? 'dark--text-color' : ''}`}
               >
                 Great flavour
               </h6>
             </Col>
             <Col xs={6}>
-              <i className={`bi bi-truck fs-1 ${darkMode ? "" : "light--text-color"}`}
+              <i
+                className={`bi bi-truck fs-1 ${
+                  darkMode ? '' : 'light--text-color'
+                }`}
               ></i>
-              <h3 className={`mb-2 letter-spacing ${darkMode ? "" : "light--text-color"}`}
+              <h3
+                className={`mb-2 letter-spacing ${
+                  darkMode ? '' : 'light--text-color'
+                }`}
               >
                 Fastest delivery
               </h3>
-              <h6 className={`fst-italic ${darkMode ? "dark--text-color" : ""}`}
+              <h6
+                className={`fst-italic ${darkMode ? 'dark--text-color' : ''}`}
               >
                 No. 1 in the city
               </h6>
@@ -145,68 +156,61 @@ export default function Mainpage({darkMode}) {
         </Col>
       </Row>
       <div className="text-center pt-5 mb-5">
-        <h1 className={`fs-6 fst-italic ${darkMode ? "dark--text-color" : ""}`}
-        >
+        <h1 className={`fs-6 fst-italic ${darkMode ? 'dark--text-color' : ''}`}>
           Our flowers
         </h1>
-        <h1 className={`fs-1 letter-spacing ${darkMode ? "" : "light--text-color"}`}
+        <h1
+          className={`fs-1 letter-spacing ${
+            darkMode ? '' : 'light--text-color'
+          }`}
         >
           Choose your favorite
         </h1>
       </div>
-      <Row xs={1} sm={2} md={4} className="mb-5 gy-2 gx-2 justify-content-evenly cards--container">
+      <Row
+        xs={1}
+        sm={2}
+        md={4}
+        className="mb-5 gy-2 gx-2 justify-content-evenly cards--container"
+      >
         {cards}
       </Row>
 
-      <div className="row pt-5 mb-5 d-flex align-items-center">
-        <div className="col-md-6 slider--container">
+      <Row className="pt-5 mb-5 d-flex align-items-center">
+        <Col md={6} className="slider--container">
           <Slideshow imgs={[P2, P3, P4, P5, P6]} />
-        </div>
-        <div className="col-md-6">
+        </Col>
+        <Col md={6}>
           <h1
-            className={
-              darkMode
-                ? 'mt-3 letter-spacing'
-                : 'mt-3 letter-spacing light--text-color'
-            }
+            className={`mt-3 letter-spacing ${
+              darkMode ? '' : 'light--text-color'
+            }`}
           >
             Our clients prefer
           </h1>
-          <p className={darkMode ? 'fs-4 dark--text-color' : 'fs-4'}>
+          <p className={`fs-4 ${darkMode ? 'dark--text-color' : ''}`}>
             Lorem ipsum dolor sit amet summ dolore, eu omnes mnesarchum
             eosatsimuscum primis.
           </p>
-        </div>
-      </div>
+        </Col>
+      </Row>
 
       <div className="text-center pt-5 mb-5">
-        <h1
-          className={
-            darkMode
-              ? 'fs-6 dark--text-color fst-italic'
-              : 'fs-6 fst-italic'
-          }
-        >
+        <h1 className={`fs-6 fst-italic ${darkMode ? 'dark--text-color' : ''}`}>
           Our services
         </h1>
-        <h1
-          className={
-            darkMode
-              ? 'fs-1 letter-spacing'
-              : 'fs-1 light--text-color letter-spacing'
-          }
-        >
+        <h1 className={`fs-6 fst-italic ${darkMode ? 'dark--text-color' : ''}`}>
           Flowers for every occasion
         </h1>
       </div>
-      <div className="row gy-2 mb-5 d-flex justyfy-content-center">
-        <div className="col-md-6 d-flex justify-content-center">
-          <img src={P17} className="img-fluid" alt="" />
-        </div>
-        <div className="col-md-6 d-flex justify-content-center">
-          <img src={P18} className="img-fluid" alt="" />
-        </div>
-      </div>
+      <Row className="gy-2 mb-5 d-flex justyfy-content-center">
+        <Col md={6} className="d-flex justify-content-center">
+          <Image fluid src={P17} alt="" />
+        </Col>
+        <Col md={6} className="d-flex justify-content-center">
+          <Image fluid src={P18} alt="" />
+        </Col>
+      </Row>
       <div className="row gy-3 d-flex justify-content-center mb-5">
         <div className="col-md-3 d-flex justify-content-sm-center align-items-center">
           <span>
@@ -377,9 +381,7 @@ export default function Mainpage({darkMode}) {
       <div className="text-center pt-5 mb-5">
         <h1
           className={
-            darkMode
-              ? 'fs-6 dark--text-color fst-italic'
-              : 'fs-6 fst-italic'
+            darkMode ? 'fs-6 dark--text-color fst-italic' : 'fs-6 fst-italic'
           }
         >
           Contacts
@@ -411,9 +413,7 @@ export default function Mainpage({darkMode}) {
             >
               Toronto
             </h5>
-            <h6 className={darkMode ? '' : 'light--text-color'}>
-              Say hello
-            </h6>
+            <h6 className={darkMode ? '' : 'light--text-color'}>Say hello</h6>
             <h6
               className={
                 darkMode
@@ -433,9 +433,7 @@ export default function Mainpage({darkMode}) {
             >
               +369 35 353562 3544
             </h6>
-            <h6 className={darkMode ? '' : 'light--text-color'}>
-              Address
-            </h6>
+            <h6 className={darkMode ? '' : 'light--text-color'}>Address</h6>
             <h6
               className={
                 darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
@@ -460,9 +458,7 @@ export default function Mainpage({darkMode}) {
             >
               Paris
             </h5>
-            <h6 className={darkMode ? '' : 'light--text-color'}>
-              Say hello
-            </h6>
+            <h6 className={darkMode ? '' : 'light--text-color'}>Say hello</h6>
             <h6
               className={
                 darkMode
@@ -482,9 +478,7 @@ export default function Mainpage({darkMode}) {
             >
               +369 35 353562 3544
             </h6>
-            <h6 className={darkMode ? '' : 'light--text-color'}>
-              Address
-            </h6>
+            <h6 className={darkMode ? '' : 'light--text-color'}>Address</h6>
             <h6
               className={
                 darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
@@ -509,9 +503,7 @@ export default function Mainpage({darkMode}) {
             >
               Barcelona
             </h5>
-            <h6 className={darkMode ? '' : 'light--text-color'}>
-              Say hello
-            </h6>
+            <h6 className={darkMode ? '' : 'light--text-color'}>Say hello</h6>
             <h6
               className={
                 darkMode
@@ -531,9 +523,7 @@ export default function Mainpage({darkMode}) {
             >
               +369 35 353562 3544
             </h6>
-            <h6 className={darkMode ? '' : 'light--text-color'}>
-              Address
-            </h6>
+            <h6 className={darkMode ? '' : 'light--text-color'}>Address</h6>
             <h6
               className={
                 darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
