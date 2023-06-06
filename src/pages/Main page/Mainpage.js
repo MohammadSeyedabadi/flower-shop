@@ -3,8 +3,8 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
 import Card from '../../components/Card'
-import ProductsList from '../../data/ProductsList'
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import ProductsList from '../../data/ProductsList'
 import Picture from '../../images/p11.jpg'
 import P2 from '../../images/p2.jpg'
 import P3 from '../../images/p3.jpg'
@@ -15,10 +15,10 @@ import P17 from '../../images/p17.jpg'
 import P18 from '../../images/p18.jpg'
 import P20 from '../../images/p20.png'
 
-export default function Mainpage(props) {
+export default function Mainpage({darkMode}) {
   const cards = ProductsList.slice(0, 8).map((item) => {
     return (
-      <Card key={item.id} id={item.id} item={item} darkMode={props.darkMode} />
+      <Card key={item.id} id={item.id} item={item} darkMode={darkMode} />
     )
   })
 
@@ -100,99 +100,56 @@ export default function Mainpage(props) {
   }
 
   return (
-    <main
-      className={
-        props.darkMode ? 'container-fluid dark main' : 'container-fluid main'
-      }
+    <main className={`container-fluid main ${darkMode ? "dark" : "" }`}
     >
-      <div className="row mb-5 d-flex align-items-center">
-        <div className="col-md-6 d-flex justify-content-center">
-          <img src={Picture} className="img-fluid" alt="" />
-        </div>
-        <div className="col-md-6">
-          <h1
-            className={
-              props.darkMode
-                ? 'letter-spacing'
-                : 'letter-spacing light--text-color'
-            }
+      <Row className="mb-5 d-flex align-items-center">
+        <Col md={6} className="d-flex justify-content-center">
+          <Image fluid src={Picture} alt="" />
+        </Col>
+        <Col md={6}>
+          <h1 className={`letter-spacing ${darkMode ? "" : "light--text-color"}`}
           >
             We Deliver Amazing Bouquets!
           </h1>
-          <p className={props.darkMode ? 'fs-4 dark--text-color' : 'fs-4'}>
+          <p className={`fs-4 ${darkMode ? "dark--text-color" : ""}`}
+          >
             Lorem ipsum dolor sit amet summ dolore, eu omnes mnesarchum
             eosatsimuscum primis.
           </p>
-          <div className="row">
-            <div className="col-6">
-              <i
-                className={
-                  props.darkMode
-                    ? 'bi bi-flower1 fs-1'
-                    : 'bi bi-flower1 fs-1 light--text-color'
-                }
+          <Row>
+            <Col xs={6}>
+              <i className={`bi bi-flower1 fs-1 ${darkMode ? "" : "light--text-color"}`}
               ></i>
-              <h3
-                className={
-                  props.darkMode
-                    ? 'mb-2 letter-spacing'
-                    : 'mb-2 light--text-color letter-spacing'
-                }
+              <h3 className={`mb-2 letter-spacing ${darkMode ? "" : "light--text-color"}`}
               >
                 Freshcut flowers
               </h3>
-              <h6
-                className={
-                  props.darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
-                }
+              <h6 className={`fst-italic ${darkMode ? "dark--text-color" : ""}`}
               >
                 Great flavour
               </h6>
-            </div>
-            <div className="col-6">
-              <i
-                className={
-                  props.darkMode
-                    ? 'bi bi-truck fs-1'
-                    : 'bi bi-truck fs-1 light--text-color'
-                }
+            </Col>
+            <Col xs={6}>
+              <i className={`bi bi-truck fs-1 ${darkMode ? "" : "light--text-color"}`}
               ></i>
-              <h3
-                className={
-                  props.darkMode
-                    ? 'mb-2 letter-spacing'
-                    : 'mb-2 letter-spacing light--text-color'
-                }
+              <h3 className={`mb-2 letter-spacing ${darkMode ? "" : "light--text-color"}`}
               >
                 Fastest delivery
               </h3>
-              <h6
-                className={
-                  props.darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
-                }
+              <h6 className={`fst-italic ${darkMode ? "dark--text-color" : ""}`}
               >
                 No. 1 in the city
               </h6>
-            </div>
-          </div>
-        </div>
-      </div>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
       <div className="text-center pt-5 mb-5">
-        <h1
-          className={
-            props.darkMode
-              ? 'fs-6 dark--text-color fst-italic'
-              : 'fs-6 fst-italic'
-          }
+        <h1 className={`fs-6 fst-italic ${darkMode ? "dark--text-color" : ""}`}
         >
           Our flowers
         </h1>
-        <h1
-          className={
-            props.darkMode
-              ? 'fs-1 letter-spacing'
-              : 'fs-1 light--text-color letter-spacing'
-          }
+        <h1 className={`fs-1 letter-spacing ${darkMode ? "" : "light--text-color"}`}
         >
           Choose your favorite
         </h1>
@@ -208,14 +165,14 @@ export default function Mainpage(props) {
         <div className="col-md-6">
           <h1
             className={
-              props.darkMode
+              darkMode
                 ? 'mt-3 letter-spacing'
                 : 'mt-3 letter-spacing light--text-color'
             }
           >
             Our clients prefer
           </h1>
-          <p className={props.darkMode ? 'fs-4 dark--text-color' : 'fs-4'}>
+          <p className={darkMode ? 'fs-4 dark--text-color' : 'fs-4'}>
             Lorem ipsum dolor sit amet summ dolore, eu omnes mnesarchum
             eosatsimuscum primis.
           </p>
@@ -225,7 +182,7 @@ export default function Mainpage(props) {
       <div className="text-center pt-5 mb-5">
         <h1
           className={
-            props.darkMode
+            darkMode
               ? 'fs-6 dark--text-color fst-italic'
               : 'fs-6 fst-italic'
           }
@@ -234,7 +191,7 @@ export default function Mainpage(props) {
         </h1>
         <h1
           className={
-            props.darkMode
+            darkMode
               ? 'fs-1 letter-spacing'
               : 'fs-1 light--text-color letter-spacing'
           }
@@ -255,7 +212,7 @@ export default function Mainpage(props) {
           <span>
             <i
               className={
-                props.darkMode
+                darkMode
                   ? 'bi bi-hand-index-thumb fs-1 me-3'
                   : 'bi bi-hand-index-thumb fs-1 light--text-color me-3'
               }
@@ -264,7 +221,7 @@ export default function Mainpage(props) {
           <span>
             <h5
               className={
-                props.darkMode
+                darkMode
                   ? 'letter-spacing mb-0'
                   : 'light--text-color letter-spacing mb-0'
               }
@@ -275,7 +232,7 @@ export default function Mainpage(props) {
               <a
                 href="#"
                 className={
-                  props.darkMode
+                  darkMode
                     ? 'text-white text-decoration-underline fst-italic'
                     : 'text-dark text-decoration-underline fst-italic'
                 }
@@ -289,7 +246,7 @@ export default function Mainpage(props) {
           <span>
             <i
               className={
-                props.darkMode
+                darkMode
                   ? 'bi bi-truck fs-1 me-3'
                   : 'bi bi-truck fs-1 light--text-color me-3'
               }
@@ -298,7 +255,7 @@ export default function Mainpage(props) {
           <span>
             <h5
               className={
-                props.darkMode
+                darkMode
                   ? 'letter-spacing mb-0'
                   : 'light--text-color letter-spacing mb-0'
               }
@@ -309,7 +266,7 @@ export default function Mainpage(props) {
               <a
                 href="#"
                 className={
-                  props.darkMode
+                  darkMode
                     ? 'text-white text-decoration-underline fst-italic'
                     : 'text-dark text-decoration-underline fst-italic'
                 }
@@ -323,7 +280,7 @@ export default function Mainpage(props) {
           <span>
             <i
               className={
-                props.darkMode
+                darkMode
                   ? 'bi bi-droplet fs-1 me-3'
                   : 'bi bi-droplet fs-1 light--text-color me-3'
               }
@@ -332,7 +289,7 @@ export default function Mainpage(props) {
           <span>
             <h5
               className={
-                props.darkMode
+                darkMode
                   ? 'letter-spacing mb-0'
                   : 'light--text-color letter-spacing mb-0'
               }
@@ -343,7 +300,7 @@ export default function Mainpage(props) {
               <a
                 href="#"
                 className={
-                  props.darkMode
+                  darkMode
                     ? 'text-white text-decoration-underline fst-italic'
                     : 'text-dark text-decoration-underline fst-italic'
                 }
@@ -357,7 +314,7 @@ export default function Mainpage(props) {
           <span>
             <i
               className={
-                props.darkMode
+                darkMode
                   ? 'bi bi-palette fs-1 me-3'
                   : 'bi bi-palette fs-1 light--text-color me-3'
               }
@@ -366,7 +323,7 @@ export default function Mainpage(props) {
           <span>
             <h5
               className={
-                props.darkMode
+                darkMode
                   ? 'letter-spacing mb-0'
                   : 'light--text-color letter-spacing mb-0'
               }
@@ -377,7 +334,7 @@ export default function Mainpage(props) {
               <a
                 href="#"
                 className={
-                  props.darkMode
+                  darkMode
                     ? 'text-white text-decoration-underline fst-italic'
                     : 'text-dark text-decoration-underline fst-italic'
                 }
@@ -391,13 +348,13 @@ export default function Mainpage(props) {
 
       <Row
         className={`p-5 mb-5 ${
-          props.darkMode ? 'card--stats-dark' : 'card--stats-light'
+          darkMode ? 'card--stats-dark' : 'card--stats-light'
         }`}
       >
         <Col>
           <p
             className={
-              props.darkMode
+              darkMode
                 ? 'text-center fs-4 dark--text-color'
                 : 'text-center fs-4'
             }
@@ -407,7 +364,7 @@ export default function Mainpage(props) {
           </p>
           <p
             className={
-              props.darkMode
+              darkMode
                 ? 'text-center fst-italic'
                 : 'text-center fst-italic light--text-color'
             }
@@ -420,7 +377,7 @@ export default function Mainpage(props) {
       <div className="text-center pt-5 mb-5">
         <h1
           className={
-            props.darkMode
+            darkMode
               ? 'fs-6 dark--text-color fst-italic'
               : 'fs-6 fst-italic'
           }
@@ -429,7 +386,7 @@ export default function Mainpage(props) {
         </h1>
         <h2
           className={
-            props.darkMode
+            darkMode
               ? 'fs-1 letter-spacing'
               : 'fs-1 light--text-color letter-spacing'
           }
@@ -442,46 +399,46 @@ export default function Mainpage(props) {
         <Col>
           <div
             className={`p-5 ${
-              props.darkMode ? 'card--stats-dark' : 'card--stats-light'
+              darkMode ? 'card--stats-dark' : 'card--stats-light'
             }`}
           >
             <h5
               className={
-                props.darkMode
+                darkMode
                   ? 'text-center letter-spacing'
                   : 'text-center letter-spacing light--text-color'
               }
             >
               Toronto
             </h5>
-            <h6 className={props.darkMode ? '' : 'light--text-color'}>
+            <h6 className={darkMode ? '' : 'light--text-color'}>
               Say hello
             </h6>
             <h6
               className={
-                props.darkMode
+                darkMode
                   ? 'fst-italic mb-5 dark--text-color'
                   : 'fst-italic mb-5'
               }
             >
               email@site.com
             </h6>
-            <h6 className={props.darkMode ? '' : 'light--text-color'}>Phone</h6>
+            <h6 className={darkMode ? '' : 'light--text-color'}>Phone</h6>
             <h6
               className={
-                props.darkMode
+                darkMode
                   ? 'fst-italic mb-5 dark--text-color'
                   : 'fst-italic mb-5'
               }
             >
               +369 35 353562 3544
             </h6>
-            <h6 className={props.darkMode ? '' : 'light--text-color'}>
+            <h6 className={darkMode ? '' : 'light--text-color'}>
               Address
             </h6>
             <h6
               className={
-                props.darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
+                darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
               }
             >
               4th Avenue 4856, New York
@@ -491,46 +448,46 @@ export default function Mainpage(props) {
         <Col>
           <div
             className={`p-5 ${
-              props.darkMode ? 'card--stats-dark' : 'card--stats-light-1'
+              darkMode ? 'card--stats-dark' : 'card--stats-light-1'
             }`}
           >
             <h5
               className={
-                props.darkMode
+                darkMode
                   ? 'text-center letter-spacing'
                   : 'text-center letter-spacing light--text-color'
               }
             >
               Paris
             </h5>
-            <h6 className={props.darkMode ? '' : 'light--text-color'}>
+            <h6 className={darkMode ? '' : 'light--text-color'}>
               Say hello
             </h6>
             <h6
               className={
-                props.darkMode
+                darkMode
                   ? 'fst-italic mb-5 dark--text-color'
                   : 'fst-italic mb-5'
               }
             >
               email@site.com
             </h6>
-            <h6 className={props.darkMode ? '' : 'light--text-color'}>Phone</h6>
+            <h6 className={darkMode ? '' : 'light--text-color'}>Phone</h6>
             <h6
               className={
-                props.darkMode
+                darkMode
                   ? 'fst-italic mb-5 dark--text-color'
                   : 'fst-italic mb-5'
               }
             >
               +369 35 353562 3544
             </h6>
-            <h6 className={props.darkMode ? '' : 'light--text-color'}>
+            <h6 className={darkMode ? '' : 'light--text-color'}>
               Address
             </h6>
             <h6
               className={
-                props.darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
+                darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
               }
             >
               4th Avenue 4856, New York
@@ -540,46 +497,46 @@ export default function Mainpage(props) {
         <Col>
           <div
             className={`p-5 ${
-              props.darkMode ? 'card--stats-dark' : 'card--stats-light-2'
+              darkMode ? 'card--stats-dark' : 'card--stats-light-2'
             }`}
           >
             <h5
               className={
-                props.darkMode
+                darkMode
                   ? 'text-center letter-spacing'
                   : 'text-center letter-spacing light--text-color'
               }
             >
               Barcelona
             </h5>
-            <h6 className={props.darkMode ? '' : 'light--text-color'}>
+            <h6 className={darkMode ? '' : 'light--text-color'}>
               Say hello
             </h6>
             <h6
               className={
-                props.darkMode
+                darkMode
                   ? 'fst-italic mb-5 dark--text-color'
                   : 'fst-italic mb-5'
               }
             >
               email@site.com
             </h6>
-            <h6 className={props.darkMode ? '' : 'light--text-color'}>Phone</h6>
+            <h6 className={darkMode ? '' : 'light--text-color'}>Phone</h6>
             <h6
               className={
-                props.darkMode
+                darkMode
                   ? 'fst-italic mb-5 dark--text-color'
                   : 'fst-italic mb-5'
               }
             >
               +369 35 353562 3544
             </h6>
-            <h6 className={props.darkMode ? '' : 'light--text-color'}>
+            <h6 className={darkMode ? '' : 'light--text-color'}>
               Address
             </h6>
             <h6
               className={
-                props.darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
+                darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
               }
             >
               4th Avenue 4856, New York
@@ -591,19 +548,19 @@ export default function Mainpage(props) {
         <Col lg={6}>
           <div
             className={`p-5 h-100 ${
-              props.darkMode ? 'card--stats-dark' : 'localflorist'
+              darkMode ? 'card--stats-dark' : 'localflorist'
             }`}
           >
             <h1
               className={`text-center letter-spacing ${
-                props.darkMode ? '' : 'light--text-color'
+                darkMode ? '' : 'light--text-color'
               }`}
             >
               Local florist
             </h1>
             <p
               className={`text-center mt-4 fs-4 px-lg-5 ${
-                props.darkMode ? 'dark--text-color' : ''
+                darkMode ? 'dark--text-color' : ''
               }`}
             >
               Lorem ipsum dolor sit amet, pri autem nemore bonorum te. Autem
@@ -615,7 +572,7 @@ export default function Mainpage(props) {
 
             <p
               className={`text-center fst-italic ${
-                props.darkMode ? '' : 'light--text-color'
+                darkMode ? '' : 'light--text-color'
               }`}
             >
               florist, Mary Byrd
@@ -625,19 +582,19 @@ export default function Mainpage(props) {
         <Col lg={6}>
           <div
             className={`p-5 text-center h-100 ${
-              props.darkMode ? 'card--stats-dark' : 'localflorist'
+              darkMode ? 'card--stats-dark' : 'localflorist'
             }`}
           >
             <h1
               className={`letter-spacing ${
-                props.darkMode ? '' : 'light--text-color'
+                darkMode ? '' : 'light--text-color'
               }`}
             >
               Ask us a question
             </h1>
             <p
               className={`mt-4 fs-4 px-lg-5 ${
-                props.darkMode ? 'dark--text-color' : ''
+                darkMode ? 'dark--text-color' : ''
               }`}
             >
               Lorem ipsum dolor sit amet, pri autem nemore bonorum te. Autem
@@ -647,14 +604,14 @@ export default function Mainpage(props) {
               <label
                 htmlFor="email"
                 className={`fw-semibold ${
-                  props.darkMode ? 'form--label-dark' : 'form--label'
+                  darkMode ? 'form--label-dark' : 'form--label'
                 }`}
               ></label>
               <input
                 type="email"
                 id="email"
                 className={`fw-semibold p-1 mb-3 w-100 ${
-                  props.darkMode ? 'form--input-dark' : 'form--input'
+                  darkMode ? 'form--input-dark' : 'form--input'
                 }`}
                 placeholder="Your Email"
                 required
@@ -664,14 +621,14 @@ export default function Mainpage(props) {
               <label
                 htmlFor="message"
                 className={`fw-semibold ${
-                  props.darkMode ? 'form--label-dark' : 'form--label'
+                  darkMode ? 'form--label-dark' : 'form--label'
                 }`}
               ></label>
               <textarea
                 id="message"
                 rows={4}
                 className={`fw-semibold p-1 mb-3 w-100  ${
-                  props.darkMode ? 'form--input-dark' : 'form--input'
+                  darkMode ? 'form--input-dark' : 'form--input'
                 }`}
                 placeholder="Your message"
                 required
@@ -680,7 +637,7 @@ export default function Mainpage(props) {
             <button
               type="submit"
               className={`d-flex form--button ${
-                props.darkMode ? 'form--button-dark' : ''
+                darkMode ? 'form--button-dark' : ''
               }`}
             >
               {status}
