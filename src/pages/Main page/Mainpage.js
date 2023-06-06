@@ -200,9 +200,11 @@ export default function Mainpage({ darkMode }) {
         <h1 className={`fs-6 fst-italic ${darkMode ? 'dark--text-color' : ''}`}>
           Our services
         </h1>
-        <h1  className={`fs-1 letter-spacing ${
+        <h1
+          className={`fs-1 letter-spacing ${
             darkMode ? '' : 'light--text-color'
-          }`}>
+          }`}
+        >
           Flowers for every occasion
         </h1>
       </div>
@@ -348,21 +350,15 @@ export default function Mainpage({ darkMode }) {
       >
         <Col>
           <p
-            className={
-              darkMode
-                ? 'text-center fs-4 dark--text-color'
-                : 'text-center fs-4'
-            }
+            className={`text-center fs-4 ${darkMode ? 'dark--text-color' : ''}`}
           >
             Every flower is a soul blossoming in nature. A flower does not think
             of competing with the flower next to it. It just blooms.
           </p>
           <p
-            className={
-              darkMode
-                ? 'text-center fst-italic'
-                : 'text-center fst-italic light--text-color'
-            }
+            className={`text-center fst-italic ${
+              darkMode ? '' : 'light--text-color'
+            }`}
           >
             Andrew Mott
           </p>
@@ -370,19 +366,13 @@ export default function Mainpage({ darkMode }) {
       </Row>
 
       <div className="text-center pt-5 mb-5">
-        <h1
-          className={
-            darkMode ? 'fs-6 dark--text-color fst-italic' : 'fs-6 fst-italic'
-          }
-        >
+        <h1 className={`fs-6 fst-italic ${darkMode ? 'dark--text-color' : ''}`}>
           Contacts
         </h1>
         <h2
-          className={
-            darkMode
-              ? 'fs-1 letter-spacing'
-              : 'fs-1 light--text-color letter-spacing'
-          }
+          className={`fs-1 letter-spacing ${
+            darkMode ? '' : 'light--text-color'
+          }`}
         >
           Where to find us
         </h2>
@@ -396,40 +386,30 @@ export default function Mainpage({ darkMode }) {
             }`}
           >
             <h5
-              className={
-                darkMode
-                  ? 'text-center letter-spacing'
-                  : 'text-center letter-spacing light--text-color'
-              }
+              className={`text-center letter-spacing ${
+                darkMode ? '' : 'light--text-color'
+              }`}
             >
               Toronto
             </h5>
             <h6 className={darkMode ? '' : 'light--text-color'}>Say hello</h6>
             <h6
-              className={
-                darkMode
-                  ? 'fst-italic mb-5 dark--text-color'
-                  : 'fst-italic mb-5'
-              }
+              className={`fst-italic mb-5 ${
+                darkMode ? 'dark--text-color' : ''
+              }`}
             >
               email@site.com
             </h6>
             <h6 className={darkMode ? '' : 'light--text-color'}>Phone</h6>
             <h6
-              className={
-                darkMode
-                  ? 'fst-italic mb-5 dark--text-color'
-                  : 'fst-italic mb-5'
-              }
+              className={`fst-italic mb-5 ${
+                darkMode ? 'dark--text-color' : ''
+              }`}
             >
               +369 35 353562 3544
             </h6>
             <h6 className={darkMode ? '' : 'light--text-color'}>Address</h6>
-            <h6
-              className={
-                darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
-              }
-            >
+            <h6 className={`fst-italic ${darkMode ? 'dark--text-color' : ''}`}>
               4th Avenue 4856, New York
             </h6>
           </div>
@@ -437,44 +417,34 @@ export default function Mainpage({ darkMode }) {
         <Col>
           <div
             className={`p-5 ${
-              darkMode ? 'card--stats-dark' : 'card--stats-light-1'
+              darkMode ? 'card--stats-dark' : 'card--stats-light'
             }`}
           >
             <h5
-              className={
-                darkMode
-                  ? 'text-center letter-spacing'
-                  : 'text-center letter-spacing light--text-color'
-              }
+              className={`text-center letter-spacing ${
+                darkMode ? '' : 'light--text-color'
+              }`}
             >
               Paris
             </h5>
             <h6 className={darkMode ? '' : 'light--text-color'}>Say hello</h6>
             <h6
-              className={
-                darkMode
-                  ? 'fst-italic mb-5 dark--text-color'
-                  : 'fst-italic mb-5'
-              }
+              className={`fst-italic mb-5 ${
+                darkMode ? 'dark--text-color' : ''
+              }`}
             >
               email@site.com
             </h6>
             <h6 className={darkMode ? '' : 'light--text-color'}>Phone</h6>
             <h6
-              className={
-                darkMode
-                  ? 'fst-italic mb-5 dark--text-color'
-                  : 'fst-italic mb-5'
-              }
+              className={`fst-italic mb-5 ${
+                darkMode ? 'dark--text-color' : ''
+              }`}
             >
               +369 35 353562 3544
             </h6>
             <h6 className={darkMode ? '' : 'light--text-color'}>Address</h6>
-            <h6
-              className={
-                darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
-              }
-            >
+            <h6 className={`fst-italic ${darkMode ? 'dark--text-color' : ''}`}>
               4th Avenue 4856, New York
             </h6>
           </div>
@@ -482,44 +452,34 @@ export default function Mainpage({ darkMode }) {
         <Col>
           <div
             className={`p-5 ${
-              darkMode ? 'card--stats-dark' : 'card--stats-light-2'
+              darkMode ? 'card--stats-dark' : 'card--stats-light'
             }`}
           >
             <h5
-              className={
-                darkMode
-                  ? 'text-center letter-spacing'
-                  : 'text-center letter-spacing light--text-color'
-              }
+              className={`text-center letter-spacing ${
+                darkMode ? '' : 'light--text-color'
+              }`}
             >
               Barcelona
             </h5>
             <h6 className={darkMode ? '' : 'light--text-color'}>Say hello</h6>
             <h6
-              className={
-                darkMode
-                  ? 'fst-italic mb-5 dark--text-color'
-                  : 'fst-italic mb-5'
-              }
+              className={`fst-italic mb-5 ${
+                darkMode ? 'dark--text-color' : ''
+              }`}
             >
               email@site.com
             </h6>
             <h6 className={darkMode ? '' : 'light--text-color'}>Phone</h6>
             <h6
-              className={
-                darkMode
-                  ? 'fst-italic mb-5 dark--text-color'
-                  : 'fst-italic mb-5'
-              }
+              className={`fst-italic mb-5 ${
+                darkMode ? 'dark--text-color' : ''
+              }`}
             >
               +369 35 353562 3544
             </h6>
             <h6 className={darkMode ? '' : 'light--text-color'}>Address</h6>
-            <h6
-              className={
-                darkMode ? 'fst-italic dark--text-color' : 'fst-italic'
-              }
-            >
+            <h6 className={`fst-italic ${darkMode ? 'dark--text-color' : ''}`}>
               4th Avenue 4856, New York
             </h6>
           </div>
