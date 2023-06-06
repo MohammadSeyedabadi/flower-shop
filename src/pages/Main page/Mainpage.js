@@ -29,11 +29,9 @@ export default function Mainpage({ darkMode }) {
             key={i}
             src={imgsrc}
             onClick={() => image(i)}
-            className={
-              index === i
-                ? 'cursor-style thumbnail--img active'
-                : 'thumbnail--img cursor-style'
-            }
+            className={`cursor-style thumbnail--img ${
+              index === i ? 'active' : ''
+            }`}
           />
         ))}
       </div>
