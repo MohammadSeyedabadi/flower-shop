@@ -28,11 +28,9 @@ export default function Card(props) {
         <img src={props.item.coverImg} className="img-fluid card--image" />
       </Link>
       <div
-        className={
-          props.darkMode
-            ? 'text-center pt-2 card--stats-dark'
-            : 'text-center pt-2 card--stats-light'
-        }
+        className={`text-center pt-2 ${
+          props.darkMode ? 'card--stats-dark' : 'card--stats-light'
+        }`}
       >
         <p className="mb-1 fs-6 letter-spacing card--title">
           {props.item.title}
