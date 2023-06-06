@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { ShopContext } from '../context/shop-context'
+import { Col } from 'react-bootstrap'
 //import P2 from "../images/p2.jpg"
 
 export default function Card(props) {
@@ -19,7 +20,7 @@ export default function Card(props) {
   const location = useLocation()
 
   return (
-    <div className="col-md-3 eachcard">
+    <Col className="eachcard">
       {badgeText && (
         <div className="p-2 fw-semibold card--badge">{badgeText}</div>
       )}
@@ -45,6 +46,6 @@ export default function Card(props) {
           </button>
         )}
       </div>
-    </div>
+    </Col>
   )
 }

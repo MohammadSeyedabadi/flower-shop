@@ -1,4 +1,5 @@
 import React from 'react'
+import Row from 'react-bootstrap/Row'
 import Card from '../../components/Card'
 import ProductsList from '../../data/ProductsList'
 import 'bootstrap-icons/font/bootstrap-icons.css'
@@ -12,9 +13,9 @@ export default function Products(props) {
   return (
     <main className="main">
       <h1>Products</h1>
-      <div className="row px-5 mb-5 gy-2 gx-2 justify-content-evenly cards--container">
+      <Row xs={1} sm={2} md={4} className="mb-5 g-2 cards--container">
         {cards}
-      </div>
+      </Row>
     </main>
   )
 }

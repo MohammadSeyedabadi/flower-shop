@@ -197,9 +197,9 @@ export default function Mainpage(props) {
           Choose your favorite
         </h1>
       </div>
-      <div className="row px-5 mb-5 gy-2 gx-2 justify-content-evenly cards--container">
+      <Row xs={1} sm={2} md={4} className="mb-5 gy-2 gx-2 justify-content-evenly cards--container">
         {cards}
-      </div>
+      </Row>
 
       <div className="row pt-5 mb-5 d-flex align-items-center">
         <div className="col-md-6 slider--container">
