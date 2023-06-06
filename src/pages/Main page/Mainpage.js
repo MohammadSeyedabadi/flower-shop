@@ -1,4 +1,5 @@
 import React from 'react'
+import Slideshow from './Slideshow'
 import { Link } from 'react-router-dom'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -20,60 +21,6 @@ export default function Mainpage({ darkMode }) {
   const cards = ProductsList.slice(0, 8).map((item) => {
     return <Card key={item.id} id={item.id} item={item} darkMode={darkMode} />
   })
-
-  const Thumbnail = ({ arr, image, index }) => {
-    return (
-      <div className="thumbnail">
-        {arr.map((imgsrc, i) => (
-          <img
-            key={i}
-            src={imgsrc}
-            onClick={() => image(i)}
-            className={`cursor-style thumbnail--img ${
-              index === i ? 'active' : ''
-            }`}
-          />
-        ))}
-      </div>
-    )
-  }
-
-  const Slideshow = ({ imgs }) => {
-    const [index, setIndex] = React.useState(0)
-
-    React.useEffect(() => {
-      setIndex(0)
-    }, [])
-    const next = () => {
-      if (index === imgs.length - 1) {
-        setIndex(0)
-      } else {
-        setIndex(index + 1)
-      }
-    }
-    const prev = () => {
-      if (index === 0) {
-        setIndex(imgs.length - 1)
-      } else {
-        setIndex(index - 1)
-      }
-    }
-
-    return (
-      <div className="slideshow">
-        <img className="img-fluid mainImg" src={imgs[index]} />
-        <div className="actions">
-          <button onClick={prev}>
-            <i className="bi bi-chevron-left"></i>
-          </button>
-          <button onClick={next}>
-            <i className="bi bi-chevron-right"></i>
-          </button>
-        </div>
-        <Thumbnail arr={imgs} image={setIndex} index={index} />
-      </div>
-    )
-  }
 
   const [status, setStatus] = React.useState('Submit')
   const handleSubmit = async (e) => {
