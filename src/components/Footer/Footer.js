@@ -4,10 +4,16 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
-import { Link } from 'react-router-dom'
-//import 'bootstrap-icons/font/bootstrap-icons.css'
+import SocialIcons from './SocialIcons'
+import SocialIconsList from './SocialIconsList'
 
 export default function Footer({ darkMode }) {
+  const socialicons = SocialIconsList.map((item) => {
+    return (
+      <SocialIcons key={item.id} id={item.id} item={item} darkMode={darkMode} />
+    )
+  })
+
   return (
     <footer className="footer">
       <Row className="mt-5 gy-1">
@@ -51,33 +57,14 @@ export default function Footer({ darkMode }) {
         >
           <div className="text-center h-100">
             <h1
-              className={`display-5 letter-spacing mb-4 ${
+              className={`display-5 letter-spacing mb-3 ${
                 darkMode ? '' : 'light--text-color'
               }`}
             >
               Connect to us
             </h1>
             <Row xs={4} className="px-5">
-              <Col>
-                <Link to="/">
-                  <i className="bi bi-facebook h1"></i>
-                </Link>
-              </Col>
-              <Col>
-                <Link to="/">
-                  <i className="bi bi-instagram h1"></i>
-                </Link>
-              </Col>
-              <Col>
-                <Link to="/">
-                  <i className="bi bi-twitter h1"></i>
-                </Link>
-              </Col>
-              <Col>
-                <Link to="/">
-                  <i className="bi bi-youtube h1"></i>
-                </Link>
-              </Col>
+              {socialicons}
             </Row>
           </div>
         </Col>

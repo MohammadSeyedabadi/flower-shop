@@ -5,7 +5,7 @@ import Navbar from './components/Navbar'
 import Mainpage from './pages/Main page/Mainpage'
 import Products from "./pages/Products/Products"
 import Cart from "./pages/Cart/Cart"
-import Footer from './components/Footer'
+import Footer from './components/Footer/Footer'
 import { ShopContextProvider } from "./context/shop-context";
 
 export default function App() {
