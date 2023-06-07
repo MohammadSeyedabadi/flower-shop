@@ -4,7 +4,7 @@ import Services from './Services/Services'
 import ServicesList from './Services/ServicesList'
 import FindUs from './Find us/FindUs'
 import PlacesList from './Find us/PlacesList'
-import Form from "./Form/Form"
+import Form from './Form/Form'
 //import { Link } from 'react-router-dom'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -36,7 +36,7 @@ export default function Mainpage({ darkMode }) {
   const findus = PlacesList.map((item) => {
     return <FindUs key={item.id} id={item.id} item={item} darkMode={darkMode} />
   })
-  
+
   return (
     <main className={`main ${darkMode ? 'dark' : ''}`}>
       <Row className="mb-5 d-flex align-items-center">
@@ -231,7 +231,7 @@ export default function Mainpage({ darkMode }) {
             </p>
           </div>
         </Col>
-        <Form darkMode={darkMode}/>
+        <Form darkMode={darkMode} />
       </Row>
     </main>
   )
