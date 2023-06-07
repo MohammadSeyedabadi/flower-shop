@@ -2,7 +2,9 @@ import React from 'react'
 import Slideshow from './Slide show/Slideshow'
 import Services from './Services/Services'
 import ServicesList from './Services/ServicesList'
-import { Link } from 'react-router-dom'
+import FindUs from './Find us/FindUs'
+import PlacesList from './Find us/PlacesList'
+//import { Link } from 'react-router-dom'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
@@ -28,6 +30,10 @@ export default function Mainpage({ darkMode }) {
     return (
       <Services key={item.id} id={item.id} item={item} darkMode={darkMode} />
     )
+  })
+
+  const findus = PlacesList.map((item) => {
+    return <FindUs key={item.id} id={item.id} item={item} darkMode={darkMode} />
   })
 
   const [status, setStatus] = React.useState('Submit')
@@ -208,111 +214,7 @@ export default function Mainpage({ darkMode }) {
       </div>
 
       <Row xs={1} xl={3} className="gy-4 pb-5">
-        <Col>
-          <div
-            className={`p-5 ${
-              darkMode ? 'card--stats-dark' : 'card--stats-light'
-            }`}
-          >
-            <h5
-              className={`text-center letter-spacing ${
-                darkMode ? '' : 'light--text-color'
-              }`}
-            >
-              Toronto
-            </h5>
-            <h6 className={darkMode ? '' : 'light--text-color'}>Say hello</h6>
-            <h6
-              className={`fst-italic mb-5 ${
-                darkMode ? 'dark--text-color' : ''
-              }`}
-            >
-              email@site.com
-            </h6>
-            <h6 className={darkMode ? '' : 'light--text-color'}>Phone</h6>
-            <h6
-              className={`fst-italic mb-5 ${
-                darkMode ? 'dark--text-color' : ''
-              }`}
-            >
-              +369 35 353562 3544
-            </h6>
-            <h6 className={darkMode ? '' : 'light--text-color'}>Address</h6>
-            <h6 className={`fst-italic ${darkMode ? 'dark--text-color' : ''}`}>
-              4th Avenue 4856, New York
-            </h6>
-          </div>
-        </Col>
-        <Col>
-          <div
-            className={`p-5 ${
-              darkMode ? 'card--stats-dark' : 'card--stats-light'
-            }`}
-          >
-            <h5
-              className={`text-center letter-spacing ${
-                darkMode ? '' : 'light--text-color'
-              }`}
-            >
-              Paris
-            </h5>
-            <h6 className={darkMode ? '' : 'light--text-color'}>Say hello</h6>
-            <h6
-              className={`fst-italic mb-5 ${
-                darkMode ? 'dark--text-color' : ''
-              }`}
-            >
-              email@site.com
-            </h6>
-            <h6 className={darkMode ? '' : 'light--text-color'}>Phone</h6>
-            <h6
-              className={`fst-italic mb-5 ${
-                darkMode ? 'dark--text-color' : ''
-              }`}
-            >
-              +369 35 353562 3544
-            </h6>
-            <h6 className={darkMode ? '' : 'light--text-color'}>Address</h6>
-            <h6 className={`fst-italic ${darkMode ? 'dark--text-color' : ''}`}>
-              4th Avenue 4856, New York
-            </h6>
-          </div>
-        </Col>
-        <Col>
-          <div
-            className={`p-5 ${
-              darkMode ? 'card--stats-dark' : 'card--stats-light'
-            }`}
-          >
-            <h5
-              className={`text-center letter-spacing ${
-                darkMode ? '' : 'light--text-color'
-              }`}
-            >
-              Barcelona
-            </h5>
-            <h6 className={darkMode ? '' : 'light--text-color'}>Say hello</h6>
-            <h6
-              className={`fst-italic mb-5 ${
-                darkMode ? 'dark--text-color' : ''
-              }`}
-            >
-              email@site.com
-            </h6>
-            <h6 className={darkMode ? '' : 'light--text-color'}>Phone</h6>
-            <h6
-              className={`fst-italic mb-5 ${
-                darkMode ? 'dark--text-color' : ''
-              }`}
-            >
-              +369 35 353562 3544
-            </h6>
-            <h6 className={darkMode ? '' : 'light--text-color'}>Address</h6>
-            <h6 className={`fst-italic ${darkMode ? 'dark--text-color' : ''}`}>
-              4th Avenue 4856, New York
-            </h6>
-          </div>
-        </Col>
+        {findus}
       </Row>
       <Row className="mt-5 gy-2">
         <Col lg={6}>
