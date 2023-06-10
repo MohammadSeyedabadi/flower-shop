@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/flower-shop/static/css/main.7a86590a.css",
+    "main.js": "/flower-shop/static/js/main.d043017d.js",
+    "static/media/bootstrap-icons.woff?": "/flower-shop/static/media/bootstrap-icons.4753c5ba57962b4d7bf8.woff",
+    "static/media/bootstrap-icons.woff2?": "/flower-shop/static/media/bootstrap-icons.6d63d0501e5ed7b79dab.woff2",
+    "static/media/p2.jpg": "/flower-shop/static/media/p2.2d02ff7efdd257d159ea.jpg",
+    "static/media/p3.jpg": "/flower-shop/static/media/p3.1898931a55ab915a9c8e.jpg",
+    "static/media/p17.jpg": "/flower-shop/static/media/p17.c749142f5fc10c58195f.jpg",
+    "static/media/p4.jpg": "/flower-shop/static/media/p4.8782f7c4782d6283f418.jpg",
+    "static/media/p11.jpg": "/flower-shop/static/media/p11.43387147104a37a0d610.jpg",
+    "static/media/p9.jpg": "/flower-shop/static/media/p9.dae01a3cd01d5cda8406.jpg",
+    "static/media/p8.jpg": "/flower-shop/static/media/p8.471e803031bdad3e77c4.jpg",
+    "static/media/p18.jpg": "/flower-shop/static/media/p18.b8887a2763a9c5fe6d29.jpg",
+    "static/media/p5.jpg": "/flower-shop/static/media/p5.617d780892ded27e2660.jpg",
+    "static/media/p7.jpg": "/flower-shop/static/media/p7.1a63f713b19281c8dd91.jpg",
+    "static/media/p10.jpg": "/flower-shop/static/media/p10.e014d5e499b2a813b140.jpg",
+    "static/media/p6.jpg": "/flower-shop/static/media/p6.5493ca8ad81a4e5dc202.jpg",
+    "index.html": "/flower-shop/index.html",
+    "main.7a86590a.css.map": "/flower-shop/static/css/main.7a86590a.css.map",
+    "main.d043017d.js.map": "/flower-shop/static/js/main.d043017d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7a86590a.css",
+    "static/js/main.d043017d.js"
+  ]
+}
