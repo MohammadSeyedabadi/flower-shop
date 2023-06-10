@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export default function SocialIcons({ item }) {
   return (
     <Col>
-      <Link to="/">
+      <Link to="/flower-shop">
         <i className={`h1 ${item.name}`}></i>
       </Link>
     </Col>

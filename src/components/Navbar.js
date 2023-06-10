@@ -35,7 +35,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
     <header id="navbar">
       <nav className={`navbar-container ${darkMode ? 'dark' : ''}`}>
         <Link
-          to="/"
+          to="/flower-shop"
           className={`ms-1 ms-lg-3 fs-6 fst-italic fw-semibold home-link letter-spacing ${
             darkMode ? 'dark' : ''
           }`}
@@ -92,14 +92,14 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
             <CustomLink
               className={`navbar-link fs-3 ${darkMode ? "dark hoverDark" : ""}`}
               onClick={toggleNavbarVisibility}
-              to="/"
+              to="/flower-shop"
             >
               Contact
             </CustomLink>
             <CustomLink
               className={`navbar-link fs-3 ${darkMode ? "dark hoverDark" : ""}`}
               onClick={toggleNavbarVisibility}
-              to="/"
+              to="/flower-shop"
             >
               FAQ
             </CustomLink>

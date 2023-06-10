@@ -30,7 +30,7 @@ export default function App() {
         <ShopContextProvider>
           <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
           <Routes>
-            <Route path="/" element={<Mainpage darkMode={darkMode} />} />
+            <Route path="/flower-shop" element={<Mainpage darkMode={darkMode} />} />
             <Route
               path="/products"
               element={<Products darkMode={darkMode} />}
