@@ -17,3 +17,7 @@ export interface HeroProps {
   children?:any;
   index?:string;
 }
+
+export interface Footer{
+  bgColor:string;
+}
