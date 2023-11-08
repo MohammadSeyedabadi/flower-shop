@@ -7,9 +7,9 @@ export default function Footer({ bgColor }: Footer) {
     <footer className={`${bgColor} mt-5 border-t border-gray-200 pb-4`}>
       <div className="flex flex-wrap lg:flex-row justify-between max-w-[1440px] mx-auto sm:px-16 px-6 py-10 gap-16">
         <div className="mb-16 lg:mb-0">
-          <h1 className="font-bold text-xl mb-5">Car Rent</h1>
+          <h1 className="font-bold text-xl mb-5">AutoTrader</h1>
           <p>
-            Car Rent <br />
+            AutoTrader <br />
             All Rights Reserved &copy;
           </p>
         </div>
@@ -34,7 +34,7 @@ export default function Footer({ bgColor }: Footer) {
       </div>
       <div className="flex max-w-[1440px] mx-auto sm:px-16 px-6 gap-2">
         <div className="me-auto font-semibold">
-          @2023 CarHub. All rights reserved
+          @2023 AutoTrader. All rights reserved
         </div>
         <div className="text-gray-600 me-16">
           <Link href="/">Privacy & Policy</Link>
