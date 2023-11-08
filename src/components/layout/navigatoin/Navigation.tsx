@@ -4,7 +4,7 @@ import { ButtonOne } from "@/components";
 export default function Navigation() {
   return (
     <header className="w-full absolute z-10">
-      <nav className="max-w-[1440px] mx-auto flex justify-between items-center sm:px-16 px-6 py-4 bg-transparent">
+      <nav className="max-w-[1440px] mx-auto sm:px-16 px-6 flex justify-between items-center py-4 bg-transparent">
         <Link href="/" className="font-bold text-xl">
           Car Rent
         </Link>
