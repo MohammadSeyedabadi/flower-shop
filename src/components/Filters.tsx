@@ -6,6 +6,16 @@ import FormControl from "@mui/material/FormControl";
 import FormGroup from "@mui/material/FormGroup";
 import FormLabel from "@mui/material/FormLabel";
 import Checkbox from "@mui/material/Checkbox";
+import Box from "@mui/material/Box";
+import Rating from "@mui/material/Rating";
+import Typography from "@mui/material/Typography";
+import Paper from "@mui/material/Paper";
+import InputBase from "@mui/material/InputBase";
+import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import SearchIcon from "@mui/icons-material/Search";
+import DirectionsIcon from "@mui/icons-material/Directions";
 
 export default function Filters() {
   const [sortPrice, setSortPrice] = useState("");
@@ -32,6 +42,14 @@ export default function Filters() {
   const handleHatchback = (event: React.ChangeEvent<HTMLInputElement>) => {
     sethatchback(event.target.checked);
   };
+
+  const [stars, setStars] = useState<number | null>(null);
+
+  const [searchCars, setSearchCars] = useState("")
+
+  function handleClick() {
+    console.log("asd");
+  }
 
   return (
     <div className="px-2 pt-1">
@@ -62,11 +80,72 @@ export default function Filters() {
       <div className="mb-2">
         <FormGroup>
           <div className="text-slate-700">Type</div>
-          <FormControlLabel control={<Checkbox checked={sport} onChange={handleSport} />} label="Sport" />
-          <FormControlLabel control={<Checkbox checked={SVG} onChange={handleSVG} />} label="SVG" />
-          <FormControlLabel control={<Checkbox checked={MVP} onChange={handleMVP} />} label="MVP" />
-          <FormControlLabel control={<Checkbox checked={hatchback} onChange={handleHatchback} />} label="Hatchback" />
+          <FormControlLabel
+            control={<Checkbox checked={sport} onChange={handleSport} />}
+            label="Sport"
+          />
+          <FormControlLabel
+            control={<Checkbox checked={SVG} onChange={handleSVG} />}
+            label="SVG"
+          />
+          <FormControlLabel
+            control={<Checkbox checked={MVP} onChange={handleMVP} />}
+            label="MVP"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox checked={hatchback} onChange={handleHatchback} />
+            }
+            label="Hatchback"
+          />
         </FormGroup>
+      </div>
+      <div className="mb-2">
+        <Box
+          sx={{
+            "& > legend": { mt: 2 },
+          }}
+        >
+          <Typography component="legend">
+            <div className="text-slate-700 mb-2">Rating</div>
+          </Typography>
+          <Rating
+            name="simple-controlled"
+            value={stars}
+            onChange={(event, newValue) => {
+              setStars(newValue);
+            }}
+          />
+        </Box>
+      </div>
+      <div className="mb-2">
+        <Paper
+          elevation={3}
+          component="form"
+          sx={{
+            p: "2px 4px",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <InputBase
+            sx={{ ml: 1, flex: 1 }}
+            placeholder="Search"
+            inputProps={{ "aria-label": "search" }}
+            value={searchCars}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              setSearchCars(event.target.value);
+            }}
+          />
+          <IconButton
+            type="button"
+            sx={{ p: "10px" }}
+            aria-label="search"
+            onClick={handleClick}
+          >
+            <SearchIcon />
+          </IconButton>
+        </Paper>
       </div>
     </div>
   );

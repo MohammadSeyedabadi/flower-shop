@@ -11,6 +11,55 @@
   font-family: "Manrope", sans-serif;
 }
 
+.webName {
+  background: #8360c3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #2ebf91,
+    #8360c3
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #2ebf91,
+    #8360c3
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.HeroPicture {
+  border-radius: 31% 69% 25% 75% / 49% 9% 91% 51%;
+  border-radius: 31% 69% 25% 75% / 70% 9% 91% 30%;
+  border-radius: 13% 87% 8% 92% / 88% 9% 91% 12%;
+
+  background: #667db6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #667db6,
+    #0082c8,
+    #0082c8,
+    #667db6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #667db6,
+    #0082c8,
+    #0082c8,
+    #667db6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  height: auto;
+  backdrop-filter: blur(10px);
+  object-fit: cover;
+}
+
+.HeroBgPicture {
+  @apply absolute xl:-top-24 xl:-right-1/2 -right-1/4 bg-hero-bg bg-repeat-round -z-10 w-full xl:h-screen h-[590px] overflow-hidden;
+  /* filter: grayscale(35%); */
+}
+
 .nav {
   height: 8vh;
   background-color: rgb(209 213 219);
