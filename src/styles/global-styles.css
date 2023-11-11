@@ -10,3 +10,51 @@
   box-sizing: border-box;
   font-family: "Manrope", sans-serif;
 }
+
+.nav {
+  height: 8vh;
+  background-color: rgb(209 213 219);
+  display: flex;
+}
+
+.nav > div {
+  margin: auto;
+}
+
+.page {
+  display: flex;
+  height: 92vh;
+  position: relative;
+}
+
+.sidebar {
+  background-color: rgb(229 231 235);
+  overflow-y: auto;
+  z-index: 20;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  width: 20rem;
+  /* display: none; */
+}
+
+.content {
+  background-color: rgb(243 244 246);
+  overflow-y: auto;
+}
+
+@media (min-width: 900px) {
+  .sidebar {
+    position: static;
+    flex: 1;
+    background-color: rgb(229 231 235);
+    overflow-y: auto;
+  }
+
+  .content {
+    flex: 5;
+    background-color: rgb(243 244 246);
+    overflow-y: auto;
+  }
+}

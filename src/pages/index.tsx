@@ -3,13 +3,6 @@ import { Navigation, Hero, ButtonOne, Footer } from "@/components";
 import Search from "@/components/Search";
 
 export default function Index() {
-  const handleScroll = () => {
-    const nextSection = document.getElementById("discover");
-
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
   return (
     <>
       <Navigation />
@@ -21,8 +14,8 @@ export default function Index() {
           >
             <ButtonOne
               title="Explore Cars"
-              containerStyles="bg-primary-blue text-white rounded-full mt-10"
-              handleClick={handleScroll}
+              containerStyles="bg-primary-blue text-white rounded-full mt-10 w-48"
+              link="allCars"
             />
           </Hero>
           <div className="xl:flex-[1.5] flex justify-end items-end w-full xl:h-screen">
