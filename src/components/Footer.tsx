@@ -5,7 +5,7 @@ import { Footer } from "@/types";
 export default function Footer({ bgColor }: Footer) {
   return (
     <footer
-      className={`${bgColor} mt-5 border-4 border-indigo-200 border-t-indigo-500 pb-4`}
+      className={`${bgColor} mt-5 border-2 border-indigo-200 border-t-indigo-500 pb-4`}
     >
       <div className="flex flex-wrap lg:flex-row justify-between max-w-[1440px] mx-auto sm:px-16 px-6 py-10 gap-16">
         <div className="mb-16 lg:mb-0">

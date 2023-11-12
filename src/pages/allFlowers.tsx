@@ -1,7 +1,7 @@
 import { Filters } from "@/components";
 
 
-export default function allCars() {
+export default function allFlowers() {
   return (
     <>
       <nav className="nav">

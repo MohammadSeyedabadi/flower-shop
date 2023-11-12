@@ -16,7 +16,7 @@ export default function Index() {
             <ButtonOne
               title="Explore Flowers"
               containerStyles="bg-primary-blue text-white rounded-full mt-10 w-48"
-              link="allCars"
+              link="allFlowers"
             />
           </Hero>
           <div className="xl:flex-[1.5] flex justify-end items-end w-full xl:h-screen">

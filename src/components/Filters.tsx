@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useReducer } from "react";
+import { FiltersType } from "@/types";
+import data from "@/utils/data/data";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -18,37 +20,31 @@ import SearchIcon from "@mui/icons-material/Search";
 import DirectionsIcon from "@mui/icons-material/Directions";
 
 export default function Filters() {
-  const [sortPrice, setSortPrice] = useState("");
-  const handleChangeRadio = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSortPrice((event.target as HTMLInputElement).value);
-  };
-
-  const [sport, setSport] = useState(true);
-  const handleSport = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSport(event.target.checked);
-  };
-
-  const [SVG, setSVG] = useState(true);
-  const handleSVG = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSVG(event.target.checked);
-  };
-
-  const [MVP, setMVP] = useState(true);
-  const handleMVP = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setMVP(event.target.checked);
-  };
-
-  const [hatchback, sethatchback] = useState(true);
-  const handleHatchback = (event: React.ChangeEvent<HTMLInputElement>) => {
-    sethatchback(event.target.checked);
-  };
-
-  const [stars, setStars] = useState<number | null>(null);
-
-  const [searchCars, setSearchCars] = useState("")
-
-  function handleClick() {
-    console.log("asd");
+  const [productState, productDispatch] = useReducer(productReducer, {
+    price: "",
+    fastDelivery: false, // only fast delivery
+    outOfStock: false, // only out of stock
+    ratings: null,
+    searchQuery: "",
+  });
+  console.log(productState);
+  function productReducer(state: any, action: any) {
+    switch (action.type) {
+      case "SORT_BY_PRICE":
+        return { ...state, price: action.payload };
+      case "FILTER_BY_STOCK":
+        return { ...state, outOfStock: !state.outOfStock };
+      case "FILTER_BY_DELIVERY":
+        return { ...state, fastDelivery: !state.fastDelivery };
+      case "FILTER_BY_RATINGS":
+        return { ...state, ratings: action.payload };
+      case "FILTER_BY_SEARCH":
+        return { ...state, searchQuery: action.payload };
+      case "CLEAR_FILTERS":
+        return { outOfStock: false, fastDelivery: false, ratings: 0 };
+      default:
+        return state;
+    }
   }
 
   return (
@@ -59,9 +55,20 @@ export default function Filters() {
           <RadioGroup
             row
             aria-labelledby="price-radio-buttons-group-label"
-            name="row-radio-buttons-group"
-            value={sortPrice}
-            onChange={handleChangeRadio}
+            value={productState.sort}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              if ((event.target as HTMLInputElement).value === "Descending") {
+                productDispatch({
+                  type: "SORT_BY_PRICE",
+                  payload: "Descending",
+                });
+              } else {
+                productDispatch({
+                  type: "SORT_BY_PRICE",
+                  payload: "Ascending",
+                });
+              }
+            }}
           >
             <FormControlLabel
               value="Ascending"
@@ -80,23 +87,33 @@ export default function Filters() {
       <div className="mb-2">
         <FormGroup>
           <div className="text-slate-700">Type</div>
+
           <FormControlLabel
-            control={<Checkbox checked={sport} onChange={handleSport} />}
-            label="Sport"
-          />
-          <FormControlLabel
-            control={<Checkbox checked={SVG} onChange={handleSVG} />}
-            label="SVG"
-          />
-          <FormControlLabel
-            control={<Checkbox checked={MVP} onChange={handleMVP} />}
-            label="MVP"
+            control={
+              <Checkbox
+                checked={productState.fastDelivery}
+                onChange={() =>
+                  productDispatch({
+                    type: "FILTER_BY_DELIVERY",
+                  })
+                }
+                name="Fast Delivery"
+              />
+            }
+            label="Fast Delivery"
           />
           <FormControlLabel
             control={
-              <Checkbox checked={hatchback} onChange={handleHatchback} />
+              <Checkbox
+                checked={productState.outOfStock}
+                onChange={() =>
+                  productDispatch({
+                    type: "FILTER_BY_STOCK",
+                  })
+                }
+              />
             }
-            label="Hatchback"
+            label="Out Of Stock"
           />
         </FormGroup>
       </div>
@@ -110,11 +127,14 @@ export default function Filters() {
             <div className="text-slate-700 mb-2">Rating</div>
           </Typography>
           <Rating
-            name="simple-controlled"
-            value={stars}
-            onChange={(event, newValue) => {
-              setStars(newValue);
-            }}
+            name="ratings"
+            value={productState.ratings}
+            onChange={(event, newValue) =>
+              productDispatch({
+                type: "FILTER_BY_RATINGS",
+                payload: newValue,
+              })
+            }
           />
         </Box>
       </div>
@@ -132,16 +152,18 @@ export default function Filters() {
             sx={{ ml: 1, flex: 1 }}
             placeholder="Search"
             inputProps={{ "aria-label": "search" }}
-            value={searchCars}
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-              setSearchCars(event.target.value);
-            }}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+              productDispatch({
+                type: "FILTER_BY_SEARCH",
+                payload: event.target.value,
+              })
+            }
           />
           <IconButton
+            disabled
             type="button"
             sx={{ p: "10px" }}
             aria-label="search"
-            onClick={handleClick}
           >
             <SearchIcon />
           </IconButton>
