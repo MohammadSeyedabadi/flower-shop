@@ -4,16 +4,17 @@ import Search from "@/components/Search";
 
 export default function Index() {
   return (
-    <>
+    <div className="uiGradient--one">
       <Navigation />
       <main className="overflow-hidden">
         <div className="relative flex flex-col xl:flex-row gap-5 z-0 max-w-[1440px] mx-auto">
           <Hero
-            title="Find, book, rent a car—quick and super easy!"
-            subTitle="Streamline your car rental experience with our effortless booking process."
+            title="We Deliver Amazing Bouquets!"
+            subTitle="Lorem ipsum dolor sit amet summ dolore, eu omnes mnesarchum
+            eosatsimuscum primis."
           >
             <ButtonOne
-              title="Explore Cars"
+              title="Explore Flowers"
               containerStyles="bg-primary-blue text-white rounded-full mt-10 w-48"
               link="allCars"
             />
@@ -29,17 +30,17 @@ export default function Index() {
               />
             </div>
 
-            <div className="HeroBgPicture" />
+            {/* <div className="HeroBgPicture" /> */}
           </div>
         </div>
         <div className="max-w-[1440px] mx-auto sm:px-16 px-6" id="discover">
-          <h1 className="text-4xl font-bold mb-3">Car Catalogue</h1>
-          <p className="mb-2">Explore out cars you might like</p>
+          <h1 className="text-4xl font-bold mb-3">Write your flower name</h1>
+          <p className="mb-2">Explore out flowers you might like</p>
           <Search />
         </div>
       </main>
 
-      <Footer bgColor="bg-gray-50" />
-    </>
+      <Footer />
+    </div>
   );
 }

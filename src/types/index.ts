@@ -20,5 +20,16 @@ export interface HeroProps {
 }
 
 export interface Footer{
-  bgColor:string;
+  bgColor?:string;
+}
+
+export interface Products{
+  id:number;
+  name:string;
+  description?:string;
+  price:number;
+  image?:string;
+  ratings:number;
+  inStock:number;
+  fastDelivery:boolean;
 }

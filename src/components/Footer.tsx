@@ -4,12 +4,14 @@ import { Footer } from "@/types";
 
 export default function Footer({ bgColor }: Footer) {
   return (
-    <footer className={`${bgColor} mt-5 border-t border-gray-200 pb-4`}>
+    <footer
+      className={`${bgColor} mt-5 border-4 border-indigo-200 border-t-indigo-500 pb-4`}
+    >
       <div className="flex flex-wrap lg:flex-row justify-between max-w-[1440px] mx-auto sm:px-16 px-6 py-10 gap-16">
         <div className="mb-16 lg:mb-0">
-          <h1 className="font-bold text-xl mb-5">AutoTrader</h1>
+          <h1 className="font-bold text-xl mb-5">Flower Shop</h1>
           <p>
-            AutoTrader <br />
+            Flower Shop <br />
             All Rights Reserved &copy;
           </p>
         </div>
@@ -34,7 +36,7 @@ export default function Footer({ bgColor }: Footer) {
       </div>
       <div className="flex max-w-[1440px] mx-auto sm:px-16 px-6 gap-2">
         <div className="me-auto font-semibold">
-          @2023 AutoTrader. All rights reserved
+          @2023 Flower Shop. All rights reserved
         </div>
         <div className="text-gray-600 me-16">
           <Link href="/">Privacy & Policy</Link>
