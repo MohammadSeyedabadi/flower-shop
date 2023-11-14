@@ -1,5 +1,5 @@
 import { Filters } from "@/components";
-
+import { useContext } from "react";
 
 export default function allFlowers() {
   return (
@@ -7,12 +7,12 @@ export default function allFlowers() {
       <nav className="nav">
         <div>im nav</div>
       </nav>
-      <div className="page">
+      <section className="allFlowers--contentWrapper">
         <aside className="sidebar">
-            <Filters />
+          <Filters />
         </aside>
         <div className="content"></div>
-      </div>
+      </section>
     </>
   );
 }

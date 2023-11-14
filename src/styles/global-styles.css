@@ -24,8 +24,7 @@
     #e0eafc
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
-.webName {
+.uiGradient--two{
   background: #8360c3; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to left,
@@ -44,8 +43,6 @@
 }
 
 .HeroPicture {
-  border-radius: 31% 69% 25% 75% / 49% 9% 91% 51%;
-  border-radius: 31% 69% 25% 75% / 70% 9% 91% 30%;
   border-radius: 13% 87% 8% 92% / 88% 9% 91% 12%;
 
   background: #667db6; /* fallback for old browsers */
@@ -78,13 +75,14 @@
   height: 8vh;
   background-color: rgb(209 213 219);
   display: flex;
+  min-height: 4rem;
 }
 
 .nav > div {
   margin: auto;
 }
 
-.page {
+.allFlowers--contentWrapper {
   display: flex;
   height: 92vh;
   position: relative;

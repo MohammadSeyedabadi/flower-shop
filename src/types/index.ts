@@ -24,10 +24,17 @@ export interface Footer {
 }
 
 export interface FiltersType {
-  fastDelivery: boolean;
-  inStock: number;
-  ratings: number;
+  price: string;
+  fastDelivery: boolean; 
+  outOfStock: boolean;
+  ratings: number | null;
   searchQuery: string;
+}
+
+
+export interface FiltersReducerAction {
+  payload: string | number | null; // null and number are for rating
+  type:string;
 }
 
 export interface Products {

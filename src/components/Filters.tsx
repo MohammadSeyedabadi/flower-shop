@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import ProductContext from "../store/product-context";
 import { useState, useReducer } from "react";
 import { FiltersType } from "@/types";
 import data from "@/utils/data/data";
@@ -20,32 +22,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import DirectionsIcon from "@mui/icons-material/Directions";
 
 export default function Filters() {
-  const [productState, productDispatch] = useReducer(productReducer, {
-    price: "",
-    fastDelivery: false, // only fast delivery
-    outOfStock: false, // only out of stock
-    ratings: null,
-    searchQuery: "",
-  });
-  console.log(productState);
-  function productReducer(state: any, action: any) {
-    switch (action.type) {
-      case "SORT_BY_PRICE":
-        return { ...state, price: action.payload };
-      case "FILTER_BY_STOCK":
-        return { ...state, outOfStock: !state.outOfStock };
-      case "FILTER_BY_DELIVERY":
-        return { ...state, fastDelivery: !state.fastDelivery };
-      case "FILTER_BY_RATINGS":
-        return { ...state, ratings: action.payload };
-      case "FILTER_BY_SEARCH":
-        return { ...state, searchQuery: action.payload };
-      case "CLEAR_FILTERS":
-        return { outOfStock: false, fastDelivery: false, ratings: 0 };
-      default:
-        return state;
-    }
-  }
+  const { productState, productDispatch } = useContext(ProductContext);
+  console.log(productDispatch);
 
   return (
     <div className="px-2 pt-1">
