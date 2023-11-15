@@ -1,6 +1,5 @@
+import { useReducer } from "react";
 import { useContext } from "react";
-import ProductContext from "../store/product-context";
-import { useState, useReducer } from "react";
 import { FiltersType } from "@/types";
 import data from "@/utils/data/data";
 import Radio from "@mui/material/Radio";
@@ -21,10 +20,46 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import DirectionsIcon from "@mui/icons-material/Directions";
 
-export default function Filters() {
-  const { productState, productDispatch } = useContext(ProductContext);
-  console.log(productDispatch);
+const initialFiltersState = {
+  price: "",
+  fastDelivery: false, // only fast delivery
+  outOfStock: false, // only out of stock
+  ratings: 0,
+  searchQuery: "",
+};
 
+type FILTERSACTIONTYPE =
+  | { type: "SORT_BY_PRICE"; payload: string }
+  | { type: "FILTER_BY_STOCK" }
+  | { type: "FILTER_BY_DELIVERY" }
+  | { type: "FILTER_BY_RATINGS"; payload: number }
+  | { type: "FILTER_BY_SEARCH"; payload: string };
+
+function filtersReducer(state: typeof initialFiltersState, action: FILTERSACTIONTYPE) {
+  switch (action.type) {
+    case "SORT_BY_PRICE":
+      return { ...state, price: action.payload };
+    case "FILTER_BY_STOCK":
+      return { ...state, outOfStock: !state.outOfStock };
+    case "FILTER_BY_DELIVERY":
+      return { ...state, fastDelivery: !state.fastDelivery };
+    case "FILTER_BY_RATINGS":
+      return { ...state, ratings: action.payload };
+    case "FILTER_BY_SEARCH":
+      return { ...state, searchQuery: action.payload };
+    default:
+      // return state;
+      throw new Error("Unknown action");
+  }
+}
+
+export default function Filters() {
+  const [filtersState, filtersDispatch] = useReducer(
+    filtersReducer,
+    initialFiltersState
+  );
+
+  console.log(filtersState);
   return (
     <div className="px-2 pt-1">
       <div className="mb-5">
@@ -33,15 +68,15 @@ export default function Filters() {
           <RadioGroup
             row
             aria-labelledby="price-radio-buttons-group-label"
-            value={productState.sort}
+            value={filtersState.price}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
               if ((event.target as HTMLInputElement).value === "Descending") {
-                productDispatch({
+                filtersDispatch({
                   type: "SORT_BY_PRICE",
                   payload: "Descending",
                 });
               } else {
-                productDispatch({
+                filtersDispatch({
                   type: "SORT_BY_PRICE",
                   payload: "Ascending",
                 });
@@ -69,9 +104,9 @@ export default function Filters() {
           <FormControlLabel
             control={
               <Checkbox
-                checked={productState.fastDelivery}
+                checked={filtersState.fastDelivery}
                 onChange={() =>
-                  productDispatch({
+                  filtersDispatch({
                     type: "FILTER_BY_DELIVERY",
                   })
                 }
@@ -83,9 +118,9 @@ export default function Filters() {
           <FormControlLabel
             control={
               <Checkbox
-                checked={productState.outOfStock}
+                checked={filtersState.outOfStock}
                 onChange={() =>
-                  productDispatch({
+                  filtersDispatch({
                     type: "FILTER_BY_STOCK",
                   })
                 }
@@ -106,13 +141,20 @@ export default function Filters() {
           </Typography>
           <Rating
             name="ratings"
-            value={productState.ratings}
-            onChange={(event, newValue) =>
-              productDispatch({
-                type: "FILTER_BY_RATINGS",
-                payload: newValue,
-              })
-            }
+            value={filtersState.ratings}
+            onChange={(event, newValue) => {
+              if (newValue == null) {
+                filtersDispatch({
+                  type: "FILTER_BY_RATINGS",
+                  payload: 0,
+                });
+              } else {
+                filtersDispatch({
+                  type: "FILTER_BY_RATINGS",
+                  payload: newValue,
+                });
+              }
+            }}
           />
         </Box>
       </div>
@@ -131,7 +173,7 @@ export default function Filters() {
             placeholder="Search"
             inputProps={{ "aria-label": "search" }}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-              productDispatch({
+              filtersDispatch({
                 type: "FILTER_BY_SEARCH",
                 payload: event.target.value,
               })

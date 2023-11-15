@@ -75,7 +75,7 @@
   height: 8vh;
   background-color: rgb(209 213 219);
   display: flex;
-  min-height: 4rem;
+  /* min-height: 4rem; */
 }
 
 .nav > div {
