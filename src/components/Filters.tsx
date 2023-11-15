@@ -16,9 +16,8 @@ import {
   SearchIcon,
 } from "../components/index";
 export default function Filters() {
-  const context = useContext(FiltersContext);
-  const { filtersState, filtersDispatch } = context;
-  console.log(filtersState);
+  const { filtersState, filtersDispatch } = useContext(FiltersContext);
+ 
   return (
     <div className="px-2 pt-1">
       <div className="mb-5">
@@ -72,7 +71,7 @@ export default function Filters() {
                 name="Fast Delivery"
               />
             }
-            label="Fast Delivery"
+            label="Only Fast Delivery"
           />
           <FormControlLabel
             control={
@@ -85,7 +84,7 @@ export default function Filters() {
                 }
               />
             }
-            label="Out Of Stock"
+            label="Include Out Of Stock"
           />
         </FormGroup>
       </div>
