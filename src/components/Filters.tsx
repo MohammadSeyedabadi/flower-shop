@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import { useContext } from "react";
-import { FiltersType } from "@/types";
+import {FiltersContext} from "@/store/product-context";
 import data from "@/utils/data/data";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
@@ -20,49 +20,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import DirectionsIcon from "@mui/icons-material/Directions";
 
-const initialFiltersState = {
-  price: "",
-  fastDelivery: false, // only fast delivery
-  outOfStock: false, // only out of stock
-  ratings: 0,
-  searchQuery: "",
-};
 
-type FILTERSACTIONTYPE =
-  | { type: "SORT_BY_PRICE"; payload: string }
-  | { type: "FILTER_BY_STOCK" }
-  | { type: "FILTER_BY_DELIVERY" }
-  | { type: "FILTER_BY_RATINGS"; payload: number }
-  | { type: "FILTER_BY_SEARCH"; payload: string };
-
-function filtersReducer(state: typeof initialFiltersState, action: FILTERSACTIONTYPE) {
-  switch (action.type) {
-    case "SORT_BY_PRICE":
-      return { ...state, price: action.payload };
-    case "FILTER_BY_STOCK":
-      return { ...state, outOfStock: !state.outOfStock };
-    case "FILTER_BY_DELIVERY":
-      return { ...state, fastDelivery: !state.fastDelivery };
-    case "FILTER_BY_RATINGS":
-      return { ...state, ratings: action.payload };
-    case "FILTER_BY_SEARCH":
-      return { ...state, searchQuery: action.payload };
-    default:
-      // return state;
-      throw new Error("Unknown action");
-  }
-}
 
 export default function Filters() {
-  const [filtersState, filtersDispatch] = useReducer(
-    filtersReducer,
-    initialFiltersState
-  );
-
-  console.log(filtersState);
+  //  const context = useContext(FiltersContext);
+  // const { filtersState } = context
+  // console.log(filtersState)
   return (
     <div className="px-2 pt-1">
-      <div className="mb-5">
+      {/* <div className="mb-5">
         <FormControl>
           <div className="text-slate-700">Price</div>
           <RadioGroup
@@ -188,7 +154,7 @@ export default function Filters() {
             <SearchIcon />
           </IconButton>
         </Paper>
-      </div>
+      </div> */}
     </div>
   );
 }
