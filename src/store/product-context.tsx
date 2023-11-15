@@ -36,8 +36,12 @@ function filtersReducer(
   }
 }
 
-export const FiltersContext = createContext<{filtersState:typeof initialFiltersState}>({
-  filtersState:initialFiltersState,
+export const FiltersContext = createContext<{
+  filtersState: typeof initialFiltersState;
+  filtersDispatch: React.Dispatch<FILTERSACTIONTYPE>;
+}>({
+  filtersState: initialFiltersState,
+  filtersDispatch: () => {},
 });
 
 export default function FiltersContextProvider(props: any) {
@@ -46,9 +50,8 @@ export default function FiltersContextProvider(props: any) {
     initialFiltersState
   );
 
-
   return (
-    <FiltersContext.Provider value={  {filtersState} }>
+    <FiltersContext.Provider value={{ filtersState, filtersDispatch }}>
       {props.children}
     </FiltersContext.Provider>
   );
