@@ -1,34 +1,27 @@
-import { useReducer } from "react";
 import { useContext } from "react";
-import {FiltersContext} from "@/store/product-context";
-import data from "@/utils/data/data";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import FormGroup from "@mui/material/FormGroup";
-import FormLabel from "@mui/material/FormLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Box from "@mui/material/Box";
-import Rating from "@mui/material/Rating";
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
-import InputBase from "@mui/material/InputBase";
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
-import DirectionsIcon from "@mui/icons-material/Directions";
-
-
-
+import { FiltersContext } from "@/store/product-context";
+import {
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+  FormControl,
+  FormGroup,
+  Checkbox,
+  Box,
+  Rating,
+  Typography,
+  Paper,
+  InputBase,
+  IconButton,
+  SearchIcon,
+} from "../components/index";
 export default function Filters() {
-  //  const context = useContext(FiltersContext);
-  // const { filtersState } = context
-  // console.log(filtersState)
+  const context = useContext(FiltersContext);
+  const { filtersState, filtersDispatch } = context;
+  console.log(filtersState);
   return (
     <div className="px-2 pt-1">
-      {/* <div className="mb-5">
+      <div className="mb-5">
         <FormControl>
           <div className="text-slate-700">Price</div>
           <RadioGroup
@@ -154,7 +147,7 @@ export default function Filters() {
             <SearchIcon />
           </IconButton>
         </Paper>
-      </div> */}
+      </div>
     </div>
   );
 }
