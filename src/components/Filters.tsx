@@ -17,14 +17,14 @@ import {
 } from "../components/index";
 export default function Filters() {
   const { filtersState, filtersDispatch } = useContext(FiltersContext);
- 
+
   return (
     <div className="px-2 pt-1">
       <div className="mb-5">
         <FormControl>
           <div className="text-slate-700">Price</div>
           <RadioGroup
-            row
+            defaultValue="Random"
             aria-labelledby="price-radio-buttons-group-label"
             value={filtersState.price}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,14 +33,26 @@ export default function Filters() {
                   type: "SORT_BY_PRICE",
                   payload: "Descending",
                 });
-              } else {
+              } else if (
+                (event.target as HTMLInputElement).value === "Ascending"
+              ) {
                 filtersDispatch({
                   type: "SORT_BY_PRICE",
                   payload: "Ascending",
                 });
+              } else {
+                filtersDispatch({
+                  type: "SORT_BY_PRICE",
+                  payload: "Random",
+                });
               }
             }}
           >
+            <FormControlLabel
+              value="Random"
+              control={<Radio size="small" />}
+              label="Random"
+            />
             <FormControlLabel
               value="Ascending"
               control={<Radio size="small" />}

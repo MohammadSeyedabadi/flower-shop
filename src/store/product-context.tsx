@@ -1,7 +1,8 @@
 import { createContext, useReducer } from "react";
+import { FiltersType } from "@/types";
 
-const initialFiltersState = {
-  price: "",
+const initialFiltersState : FiltersType  = {
+  price: "Random",
   fastDelivery: false, // only fast delivery
   outOfStock: false, // only out of stock
   ratings: 0,
