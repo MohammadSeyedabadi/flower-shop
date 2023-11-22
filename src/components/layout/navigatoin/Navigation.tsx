@@ -5,7 +5,7 @@ export default function Navigation() {
   return (
     <header className="w-full absolute z-10">
       <nav className="max-w-[1440px] mx-auto sm:px-16 px-6 flex justify-between items-center py-4 bg-transparent">
-        <Link href="/" className="font-bold text-xl uiGradient--two">
+        <Link href="/" className="font-bold text-xl web-name uiGradient--two">
           Flower Shop
         </Link>
         <ButtonOne

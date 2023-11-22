@@ -26,7 +26,7 @@ export default function Index() {
                 alt="hero"
                 width={450}
                 height={450}
-                className="HeroPicture"
+                className="HeroPicture uiGradient--three"
               />
             </div>
 

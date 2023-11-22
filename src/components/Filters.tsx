@@ -19,7 +19,7 @@ export default function Filters() {
   const { filtersState, filtersDispatch } = useContext(FiltersContext);
 
   return (
-    <div className="px-2 pt-1">
+    <div className="pt-1">
       <div className="mb-5">
         <FormControl>
           <div className="text-slate-700">Price</div>
@@ -130,7 +130,7 @@ export default function Filters() {
       </div>
       <div className="mb-2">
         <Paper
-          elevation={3}
+          elevation={2}
           component="form"
           sx={{
             p: "2px 4px",
