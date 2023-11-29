@@ -226,6 +226,11 @@
   margin-top: 8px;
   vertical-align: middle;
   width: 100%;
+  cursor: pointer;
+}
+
+.modal--image{
+  margin-top: 0px !important;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
