@@ -5,6 +5,7 @@ import { FiltersContext } from "@/store/product-context";
 import { ProductsType } from "@/types";
 import data from "@/utils/data/data";
 import Aside from "@/components/Aside";
+import CustomModal from "@/components/CustomModal";
 
 export default function allFlowers() {
   const [mainData, setMainData] = useState<ProductsType[]>();
@@ -69,6 +70,7 @@ export default function allFlowers() {
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia,
           explicabo!
         </p>
+        <CustomModal/>
       </main>
     </section>
   );
