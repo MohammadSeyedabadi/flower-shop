@@ -133,6 +133,8 @@
   flex: 1 1 0;
   max-width: 300px;
   padding: 2rem 1rem;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 
 .sidebar h3 {

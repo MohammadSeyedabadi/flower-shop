@@ -1,16 +1,5 @@
 export default [
   {
-    id: 0,
-    name: "Lotus",
-    description: "",
-    price: 15,
-    image: "/flowerImages/p6.jpg",
-    ratings: 5,
-    inStock: 0,
-    fastDelivery: true,
-    col: 1,
-  },
-  {
     id: 1,
     name: "Rose",
     description: "",
@@ -118,6 +107,6 @@ export default [
     ratings: 1,
     inStock: 200,
     fastDelivery: false,
-    col: 1,
+    col: 2,
   },
 ];
