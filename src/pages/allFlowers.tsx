@@ -8,6 +8,11 @@ import Aside from "@/components/Aside";
 import CustomModal from "@/components/CustomModal";
 
 export default function allFlowers() {
+  const colOne: ProductsType[] = [];
+  const colTwo: ProductsType[] = [];
+  const colThree: ProductsType[] = [];
+  const colFour: ProductsType[] = [];
+
   const [mainData, setMainData] = useState<ProductsType[]>();
   const [copyData, setCopyData] = useState<ProductsType[]>();
 
@@ -21,7 +26,7 @@ export default function allFlowers() {
 
   const { price, fastDelivery, outOfStock, ratings, searchQuery } =
     filtersState;
-  console.log(filtersState);
+
   function transformProducts() {
     let sortedProducts;
     if (mainData) {
@@ -61,16 +66,44 @@ export default function allFlowers() {
     return sortedProducts;
   }
 
+  transformProducts()?.map((prod) => {
+    if (prod.col === 1) {
+      colOne.push(prod);
+    } else if (prod.col === 2) {
+      colTwo.push(prod);
+    } else if (prod.col === 3) {
+      colThree.push(prod);
+    } else if (prod.col === 4) {
+      colFour.push(prod);
+    }
+  });
+
   return (
     <section className="flex min-h-screen">
       <Aside />
       <main className="content">
-        <h1>ALL FLOWERS</h1>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia,
-          explicabo!
-        </p>
-        <CustomModal/>
+        <div className="row">
+          <div className="column">
+            {colOne.map((prod) => (
+              <CustomModal key={prod.id} prod={prod} />
+            ))}
+          </div>
+          <div className="column">
+            {colTwo.map((prod) => (
+              <CustomModal key={prod.id} prod={prod} />
+            ))}
+          </div>
+          <div className="column">
+            {colThree.map((prod) => (
+              <CustomModal key={prod.id} prod={prod} />
+            ))}
+          </div>
+          <div className="column">
+            {colFour.map((prod) => (
+              <CustomModal key={prod.id} prod={prod} />
+            ))}
+          </div>
+        </div>
       </main>
     </section>
   );

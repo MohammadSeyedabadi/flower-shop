@@ -45,4 +45,5 @@ export interface ProductsType {
   ratings: number;
   inStock: number;
   fastDelivery: boolean;
+  col:number;
 }

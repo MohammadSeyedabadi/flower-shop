@@ -165,17 +165,9 @@
 
 .content {
   flex: 1 1 0;
-  padding: 2rem;
-}
-
-.content h1 {
-  color: #3c3f58;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.content p {
-  color: #707793;
+  /* padding: 2rem; */
+  max-height: 100vh;
+  overflow-x: auto;
 }
 
 @media (max-width: 1024px) {
@@ -211,7 +203,7 @@
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
-  padding: 0 4px;
+  /* padding: 0 4px; */
 }
 
 /* Create four equal columns that sits next to each other */
@@ -222,15 +214,11 @@
   padding: 0 4px;
 }
 
-.column img {
+.modal--botton {
   margin-top: 8px;
   vertical-align: middle;
   width: 100%;
   cursor: pointer;
-}
-
-.modal--image{
-  margin-top: 0px !important;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
@@ -251,7 +239,7 @@
   }
 }
 
-.column img {
+.modal--botton {
   animation: animate 0.4s ease;
 }
 
